@@ -11,11 +11,32 @@ export default function Home() {
       <div className="flex flex-1 gap-[20px] overflow-hidden mx-[20px] mb-[20px]">
         <div className="w-[70%] flex flex-col gap-[20px]">
           <div className="flex gap-[20px] flex-[2] ">
-            <div className="font-['ClashDisplay']  text-[#020202] font-[700] bg-[#ece7e1] flex items-end p-[20px] w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
+            <div className="font-['ClashDisplay'] text-[#020202] font-[700] bg-[#ece7e1] flex items-end p-[20px] w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
               <span className="text-[40px]">
                 Hey, I&apos;m Khalida <br />
                 Frontend Developer <br />
-                and a tea lover.
+                <div className="flex h-[45px]">
+                  <span className="mr-[6px]">and </span>
+                  <span className="overflow-hidden h-[45px] relative">
+                    <span className="flip-wrap block animate-flip">
+                      <span className="block font-bold h-[45px] leading-[48px]">
+                        a tea lover.
+                      </span>
+                      <span className="block font-bold h-[45px] leading-[48px]">
+                        a movie buff.
+                      </span>
+                      <span className="block font-bold h-[45px] leading-[48px]">
+                        a camping enthusiast.
+                      </span>
+                      <span className="block font-bold h-[45px] leading-[48px]">
+                        a terrible singer.
+                      </span>
+                      <span className="block font-bold h-[45px] leading-[48px]">
+                        The Strokes fan.
+                      </span>
+                    </span>
+                  </span>
+                </div>
               </span>
             </div>
 
@@ -35,23 +56,50 @@ export default function Home() {
             <div className="bg-[#ece7e1] text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
               funnn.
             </div>
-            <div className="bg-[#D1FD0A] text-[#020202] font-['ClashDisplay'] font-[700]  text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
-              contact me.
+            <div className="bg-[#D1FD0A] relative text-[#020202] font-['ClashDisplay'] font-[700]  text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+              <Image
+                src="/image/contact.png"
+                alt=""
+                width={60}
+                height={200}
+                className="absolute top-0 right-[30px] z-[50]"
+              />
+              contact.
             </div>
           </div>
         </div>
 
         <div className="w-[30%] flex flex-col gap-[20px]">
           <div className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[20px] pt-[20px] pb-[20px] cursor-pointer overflow-hidden">
-            <video
-              className="bw-hover w-full rounded-[10px]"
-              autoPlay
-              muted
-              loop
-              playsInline
-              src="/image/demo-crop.mp4"
-            />
-            <span className="mt-auto pt-[10px]">project.</span>
+            <div className="relative w-[600px] h-[400px]">
+              {/* Video positioned inside the iMac screen */}
+              <video
+                className=" bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
+                autoPlay
+                muted
+                loop
+                playsInline
+                src="/image/demo-crop.mp4"
+              />
+
+              {/* iMac image on top */}
+              <Image
+                src="/image/macbook.png"
+                alt="iMac Frame"
+                width={400}
+                height={100}
+                className="z-10 relative"
+              />
+              <Image
+                src="/image/bw-portrait.png"
+                alt=""
+                width={60}
+                height={200}
+                className="absolute left-[310px] bottom-[100px] z-[50]"
+              />
+            </div>
+
+            <span className="mt-auto pt-[10px]">work.</span>
           </div>
           <div className="bg-[#ece7e1] text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
             skills & tools.

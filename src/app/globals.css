@@ -14,3 +14,38 @@ body {
 .bw-hover:hover {
   filter: grayscale(0%);
 }
+
+@keyframes flip {
+  from {
+    margin-top: 0px;
+  }
+  3% {
+    margin-top: -45px;
+  }
+  25% {
+    margin-top: -45px;
+  }
+  28% {
+    margin-top: -90px;
+  }
+  50% {
+    margin-top: -90px;
+  }
+  53% {
+    margin-top: -135px;
+  }
+  75% {
+    margin-top: -135px;
+  }
+  78% {
+    margin-top: -180px;
+  }
+  to {
+    margin-top: -180px;
+  }
+}
+
+
+.animate-flip {
+  animation: flip 8s infinite;
+}
