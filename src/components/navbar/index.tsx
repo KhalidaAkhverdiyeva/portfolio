@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="bg-[#ece7e1] font-['ClashDisplay'] text-[#020202] font-[700] m-[20px] flex justify-between p-[15px] rounded-[20px] text-[22px] ">
-      <div className="text-[24px] relative">
+      <div className="text-[24px] ">
         /khalida.
        
       </div>

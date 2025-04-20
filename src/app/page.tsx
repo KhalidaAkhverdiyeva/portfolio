@@ -15,10 +15,11 @@ export default function Home() {
               <span className="text-[40px]">
                 Hey, I&apos;m Khalida <br />
                 Frontend Developer <br />
-                <div className="flex h-[45px]">
+                <div className="flex">
                   <span className="mr-[6px]">and </span>
-                  <span className="overflow-hidden h-[45px] relative">
-                    <span className="flip-wrap block animate-flip">
+                  <div className="overflow-hidden h-[45px] relative">
+                    <div className="flip-wrap block animate-flip">
+                      {/* each item has h-[45px] so total height = numberOfItems * 45px */}
                       <span className="block font-bold h-[45px] leading-[48px]">
                         a tea lover.
                       </span>
@@ -34,8 +35,11 @@ export default function Home() {
                       <span className="block font-bold h-[45px] leading-[48px]">
                         The Strokes fan.
                       </span>
-                    </span>
-                  </span>
+                      <span className="block font-bold h-[45px] leading-[48px]">
+                        a tea lover.
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </span>
             </div>
@@ -71,7 +75,7 @@ export default function Home() {
 
         <div className="w-[30%] flex flex-col gap-[20px]">
           <div className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[20px] pt-[20px] pb-[20px] cursor-pointer overflow-hidden">
-            <div className="relative w-[600px] h-[400px]">
+            <div className="relative w-[600px] h-[200px]">
               {/* Video positioned inside the iMac screen */}
               <video
                 className=" bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
@@ -95,7 +99,7 @@ export default function Home() {
                 alt=""
                 width={60}
                 height={200}
-                className="absolute left-[310px] bottom-[100px] z-[50]"
+                className="absolute left-[310px] bottom-[-70px] z-[50]"
               />
             </div>
 
