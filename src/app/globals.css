@@ -16,43 +16,43 @@ body {
 }
 
 @keyframes flip {
-  0% {
+  from {
     margin-top: 0px;
   }
-  16% {
-    margin-top: 0px;
+  3% {
+    margin-top: -45px;
   }
 
   20% {
     margin-top: -45px;
   }
-  36% {
-    margin-top: -45px;
+  23% {
+    margin-top: -90px;
   }
 
   40% {
     margin-top: -90px;
   }
-  56% {
-    margin-top: -90px;
+  43% {
+    margin-top: -135px;
   }
 
   60% {
     margin-top: -135px;
   }
-  76% {
-    margin-top: -135px;
+  63% {
+    margin-top: -180px;
   }
 
   80% {
     margin-top: -180px;
   }
-  96% {
-    margin-top: -180px;
+  83% {
+    margin-top: -225px;
   }
 
-  100% {
-    margin-top: 0px;
+  to {
+    margin-top: -225px;
   }
 }
 
