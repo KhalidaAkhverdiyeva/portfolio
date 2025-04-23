@@ -1,16 +1,42 @@
+"use client";
+
 import React from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "work", path: "/work" },
+    { name: "about", path: "/about" },
+    { name: "contact", path: "/contact" },
+  ];
+
+  const isHome = pathname === "/";
+
   return (
-    <div className="bg-[#ece7e1] font-['ClashDisplay'] text-[#020202] font-[700] m-[20px] flex justify-between p-[15px] rounded-[20px] text-[22px] ">
-      <div className="text-[24px] ">
+    <div
+      className={`font-['ClashDisplay'] font-[700] m-[20px] flex justify-between p-[15px] rounded-[20px] text-[22px] ${
+        isHome
+          ? "bg-[#ece7e1] text-[#020202]"
+          : "bg-[#020202] text-[#ece7e1] w-[1200px] mx-auto"
+      }`}
+    >
+      <Link href="/" className="text-[24px]">
         /khalida.
-       
-      </div>
+      </Link>
       <ul className="flex gap-[20px]">
-        <li className="hover:line-through cursor-pointer">work</li>
-        <li className="hover:line-through cursor-pointer">about </li>
-        <li className="hover:line-through cursor-pointer">contact</li>
+        {navItems.map((item) => (
+          <li
+            key={item.name}
+            className={`cursor-pointer hover:line-through ${
+              pathname === item.path ? "line-through" : ""
+            }`}
+          >
+            {item.name}
+          </li>
+        ))}
       </ul>
     </div>
   );

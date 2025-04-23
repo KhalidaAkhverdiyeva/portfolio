@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 4000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   return (
     <div className="min-h-screen flex flex-col overflow-hidden">
@@ -83,14 +83,13 @@ export default async function Home() {
           >
             <div className="relative w-[600px] h-[200px]">
               {/* Video positioned inside the iMac screen */}
-              <video
-                className=" bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
-                autoPlay
-                muted
-                loop
-                playsInline
-                src="/image/demo-crop.mp4"
-              />
+              <iframe
+                className="bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
+                src="https://www.youtube.com/embed/ZdNyCXhZpXY?autoplay=1&mute=1&loop=1&playlist=ZdNyCXhZpXY"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
 
               {/* iMac image on top */}
               <Image

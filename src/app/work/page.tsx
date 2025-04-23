@@ -1,7 +1,14 @@
+import Navbar from "@/components/navbar";
+import Projects from "@/components/projects";
 import React from "react";
 
-const Work = () => {
-  return <div>Work</div>;
-};
+export default async function Work() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
-export default Work;
+  return (
+    <div>
+      <Navbar />
+      <Projects />
+    </div>
+  );
+}
