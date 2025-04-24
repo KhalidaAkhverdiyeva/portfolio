@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import url("../../public/css/satoshi.css");
-@import url("../../public/css/clash-display.css");
+@import url("./clash-display.css");
+@import url("./satoshi.css");
 
 
 body {
