@@ -21,7 +21,7 @@ const Projects = () => {
                 muted
                 loop
                 playsInline
-                src="/image/impact-demo.mp4"
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482296/impact-demo_lpcinx.mp4"
               />
 
               {/* Black gradient overlay */}
@@ -47,7 +47,7 @@ const Projects = () => {
                 muted
                 loop
                 playsInline
-                src="/image/timezone-demo.mp4"
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482670/timezone-demo_qetp4d.mp4"
               />
 
               {/* Black gradient overlay */}
@@ -73,7 +73,7 @@ const Projects = () => {
                 muted
                 loop
                 playsInline
-                src="/image/woody-demo.mp4"
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482612/woody-demo_vi13io.mp4"
               />
 
               {/* Black gradient overlay */}
@@ -102,7 +102,7 @@ const Projects = () => {
                 muted
                 loop
                 playsInline
-                src="/image/alukas-demo.mp4"
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482523/alukas-demo_q4vnys.mp4"
               />
 
               {/* Black gradient overlay */}
@@ -127,7 +127,7 @@ const Projects = () => {
                 muted
                 loop
                 playsInline
-                src="/image/techbloog-demo.mp4"
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482603/techbloog-demo_pl0t6a.mp4"
               />
 
               {/* Black gradient overlay */}
@@ -152,7 +152,7 @@ const Projects = () => {
                 muted
                 loop
                 playsInline
-                src="/image/homezen-demo.mp4"
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482690/Homezen-demo_-_Made_with_Clipchamp_qlgsb1.mp4"
               />
 
               {/* Black gradient overlay */}

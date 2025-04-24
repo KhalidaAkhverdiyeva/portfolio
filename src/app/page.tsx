@@ -83,13 +83,14 @@ export default async function Home() {
           >
             <div className="relative w-[600px] h-[200px]">
               {/* Video positioned inside the iMac screen */}
-              <iframe
-                className="bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
-                src="https://www.youtube.com/embed/ZdNyCXhZpXY?autoplay=1&mute=1&loop=1&playlist=ZdNyCXhZpXY"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
+              <video
+                className=" bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
+                autoPlay
+                muted
+                loop
+                playsInline
+                src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482296/impact-demo_lpcinx.mp4"
+              />
 
               {/* iMac image on top */}
               <Image
@@ -118,4 +119,3 @@ export default async function Home() {
     </div>
   );
 }
-///
