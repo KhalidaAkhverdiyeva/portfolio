@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`font-['ClashDisplay'] font-[700] m-[20px] flex justify-between p-[15px] rounded-[20px] text-[22px] ${
+      className={`font-['ClashDisplay-Bold']  m-[20px] flex justify-between p-[15px] rounded-[20px] text-[22px] ${
         isHome
           ? "bg-[#ece7e1] text-[#020202]"
           : "bg-[#020202] text-[#ece7e1] w-[1200px] mx-auto"

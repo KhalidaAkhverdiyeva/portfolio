@@ -45,7 +45,7 @@ export default function SwipeableTemporaryDrawer({
               background: "none",
               border: "none",
               color: "#D1FD0A",
-              fontFamily: "'ClashDisplay', sans-serif",
+              fontFamily: "'ClashDisplay-Bold', sans-serif",
               fontSize: "24px",
               cursor: "pointer",
               padding: 0,
@@ -62,7 +62,7 @@ export default function SwipeableTemporaryDrawer({
               sx={{
                 color: "#ECE7E1",
                 fontSize: "24px",
-                fontFamily: "'ClashDisplay', sans-serif",
+                fontFamily: "'ClashDisplay-Bold', sans-serif",
                 fontWeight: 700,
               }}
             >
@@ -90,7 +90,7 @@ export default function SwipeableTemporaryDrawer({
             />
             <Typography
               sx={{
-                fontFamily: "'ClashDisplay', sans-serif",
+                fontFamily: "'ClashDisplay-Bold', sans-serif",
                 fontSize: "20px",
                 fontWeight: 500,
                 color: "#ECE7E1",
@@ -110,7 +110,7 @@ export default function SwipeableTemporaryDrawer({
 
             <Typography
               sx={{
-                fontFamily: "'ClashDisplay', sans-serif",
+                fontFamily: "'ClashDisplay-Bold', sans-serif",
                 fontSize: "20px",
                 fontWeight: 500,
                 my: "10px",
@@ -121,7 +121,7 @@ export default function SwipeableTemporaryDrawer({
             </Typography>
             <Typography
               sx={{
-                fontFamily: "'Satoshi-Regular', sans-serif",
+                fontFamily: "'Satoshi-Light', sans-serif",
                 fontSize: "14px",
               }}
             >
@@ -138,7 +138,8 @@ export default function SwipeableTemporaryDrawer({
                     "&:hover": {
                       backgroundColor: "rgba(255, 255, 255, 0.2)", // Slightly increase transparency on hover
                     },
-                    marginRight: "8px", // Add some space between buttons
+                    marginRight: "8px",
+                    marginBottom: "8px", // Add some space between buttons
                     textTransform: "none", // Prevent uppercase transformation
                     border: "1px solid rgba(255, 255, 255, 0.3)", // Optional: add border for more definition
                   }}
@@ -150,7 +151,7 @@ export default function SwipeableTemporaryDrawer({
 
             <Typography
               sx={{
-                fontFamily: "'ClashDisplay', sans-serif",
+                fontFamily: "'ClashDisplay-Bold', sans-serif",
                 fontSize: "20px",
                 fontWeight: 500,
                 mt: "20px",
@@ -189,7 +190,7 @@ export default function SwipeableTemporaryDrawer({
 
             <Typography
               sx={{
-                fontFamily: "'ClashDisplay', sans-serif",
+                fontFamily: "'ClashDisplay-Bold', sans-serif",
                 fontSize: "20px",
                 fontWeight: 500,
                 my: "10px",
@@ -246,7 +247,7 @@ export default function SwipeableTemporaryDrawer({
           target="_blank"
           rel="noopener noreferrer"
           sx={{
-            fontFamily: "'ClashDisplay', sans-serif",
+            fontFamily: "'ClashDisplay-Bold', sans-serif",
             fontSize: "16px",
             fontWeight: "700",
             display: "flex",

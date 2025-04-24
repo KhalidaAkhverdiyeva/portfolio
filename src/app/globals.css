@@ -1,6 +1,7 @@
 @import "tailwindcss";
-@import url("../../public/css/tanker.css");
 @import url("../../public/css/satoshi.css");
+@import url("../../public/css/clash-display.css");
+
 
 body {
   background-color: #020202;
