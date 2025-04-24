@@ -14,7 +14,7 @@ export default async function Home() {
       <div className="flex flex-1 gap-[20px] overflow-hidden mx-[20px] mb-[20px]">
         <div className="w-[70%] flex flex-col gap-[20px]">
           <div className="flex gap-[20px] flex-[2]">
-            <div className="font-['ClashDisplay'] relative text-[#020202] font-[700] bg-[#ece7e1] flex items-end p-[20px] w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
+            <div className="font-['Tanker'] relative text-[#020202] font-[700] bg-[#ece7e1] flex items-end p-[20px] w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
               <span className="text-[40px]">
                 Hey, I&apos;m Khalida <br />
                 Frontend Developer <br />
@@ -60,10 +60,10 @@ export default async function Home() {
             </div>
           </div>
           <div className="flex gap-[20px] flex-[1] ">
-            <div className="bg-[#ece7e1] text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+            <div className="bg-[#ece7e1] text-[#020202] font-['Tanker'] font-[700] text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
               funnn.
             </div>
-            <div className="bg-[#D1FD0A] relative text-[#020202] font-['ClashDisplay'] font-[700]  text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+            <div className="bg-[#D1FD0A] relative text-[#020202] font-['Tanker'] font-[700]  text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
               <Image
                 src="/image/contact.png"
                 alt=""
@@ -79,7 +79,7 @@ export default async function Home() {
         <div className="w-[30%] flex flex-col gap-[20px]">
           <Link
             href="/work"
-            className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[20px] pt-[20px] pb-[20px] cursor-pointer overflow-hidden"
+            className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['Tanker'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[20px] pt-[20px] pb-[20px] cursor-pointer overflow-hidden"
           >
             <div className="relative w-[600px] h-[200px]">
               {/* Video positioned inside the iMac screen */}
@@ -111,7 +111,7 @@ export default async function Home() {
 
             <span className="mt-auto pt-[10px]">work.</span>
           </Link>
-          <div className="bg-[#ece7e1] text-[#020202] font-['ClashDisplay'] font-[700] text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+          <div className="bg-[#ece7e1] text-[#020202] font-['Tanker'] font-[700] text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
             skills & tools.
           </div>
         </div>
