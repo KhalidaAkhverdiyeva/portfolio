@@ -35,7 +35,12 @@ export default function SwipeableTemporaryDrawer({
       }}
     >
       <Box
-        sx={{ p: 4, overflowY: "auto", height: "calc(100vh-80px)", pb: "80px" }}
+        sx={{
+          p: { xs: 2, md: 4 }, 
+          overflowY: "auto",
+          height: "calc(100vh - 80px)",
+          pb: "80px",
+        }}
       >
         {/* Back Button */}
         <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>

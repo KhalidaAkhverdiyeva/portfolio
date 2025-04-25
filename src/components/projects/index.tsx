@@ -27,6 +27,18 @@ const Projects = () => {
       github: "https://github.com/KhalidaAkhverdiyeva/impact-ecommerce",
     },
     {
+      title: "Alukas & Co",
+      description:
+        "Jewelry brand website with login/register. Crafted with a custom UI and full authentication flow.",
+      videoUrl:
+        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482523/alukas-demo_q4vnys.mp4",
+      about:
+        "Alukas & Co. is a modern jewelry brand store crafted to reflect elegance and sophistication. Built with Next.js and TypeScript, the site features smooth animations and essential pages like login, registration, and product views.",
+      technologies: ["Next.js", "Typescript", "Swiper", "Tailwind"],
+      website: "https://alukas-ecommerce.vercel.app/login",
+      github: "https://github.com/KhalidaAkhverdiyeva/alukas-next.js",
+    },
+    {
       title: "Timezone",
       description:
         "An elegant watch brand site focused on storytelling and product showcase, built for a sleek user experience.",
@@ -57,18 +69,7 @@ const Projects = () => {
       website: "https://wooody.vercel.app/",
       github: "https://github.com/KhalidaAkhverdiyeva/wooody",
     },
-    {
-      title: "Alukas & Co",
-      description:
-        "Jewelry brand website with login/register. Crafted with a custom UI and full authentication flow.",
-      videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482523/alukas-demo_q4vnys.mp4",
-      about:
-        "Alukas & Co. is a modern jewelry brand store crafted to reflect elegance and sophistication. Built with Next.js and TypeScript, the site features smooth animations and essential pages like login, registration, and product views.",
-      technologies: ["Next.js", "Typescript", "Swiper", "Tailwind"],
-      website: "https://alukas-ecommerce.vercel.app/login",
-      github: "https://github.com/KhalidaAkhverdiyeva/alukas-next.js",
-    },
+
     {
       title: "Techblog",
       description:
@@ -104,18 +105,18 @@ const Projects = () => {
     <div>
       <div className="max-w-[906px] mx-auto">
         {/* Title aligned with cards */}
-        <div className="text-[#ECE7E1] font-['ClashDisplay-Bold'] font-[700] text-[46px] mb-10">
+        <div className="text-[#ECE7E1] font-['ClashDisplay-Bold'] font-[700] text-[24px] mx-[25px] md:text-[46px] mb-10">
           Projects.
         </div>
 
         {/* Cards */}
-        <div className="flex gap-[20px] justify-center pb-[50px]">
+        <div className="flex flex-col md:flex-row gap-[20px] justify-center pb-[50px]">
           {/* Column 1 */}
           <div className="flex flex-col gap-[20px]">
             {projects.slice(0, 3).map((project, index) => (
               <div
                 key={index}
-                className="relative w-[448px] h-[400px] text-[#020202] rounded-[20px] text-[20px] font-semibold cursor-pointer overflow-hidden"
+                className="relative md:md:w-[448px] m-[20px] h-[400px] text-[#020202] rounded-[20px] text-[20px] font-semibold cursor-pointer overflow-hidden"
                 onClick={() => handleProjectClick(project)}
               >
                 <video
@@ -144,7 +145,7 @@ const Projects = () => {
             {projects.slice(3).map((project, index) => (
               <div
                 key={index}
-                className="relative w-[448px] h-[454px] text-[#020202] rounded-[20px] font-['ClashDisplay-Bold'] text-[20px] font-semibold cursor-pointer overflow-hidden"
+                className="relative md:w-[448px] m-[20px] h-[454px] text-[#020202] rounded-[20px] font-['ClashDisplay-Bold'] text-[20px] font-semibold cursor-pointer overflow-hidden"
                 onClick={() => handleProjectClick(project)}
               >
                 <video
