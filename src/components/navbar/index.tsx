@@ -3,6 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -17,16 +18,16 @@ const Navbar = () => {
 
   return (
     <div
-      className={`font-['ClashDisplay-Bold']  m-[20px] flex justify-between p-[15px] rounded-[20px] text-[22px] ${
+      className={`font-['ClashDisplay-Bold'] m-[10px] flex items-center justify-between p-[15px] rounded-[20px] text-[22px] ${
         isHome
-          ? "bg-[#ece7e1] text-[#020202]"
-          : "bg-[#020202] text-[#ece7e1] w-[1200px] mx-auto"
+          ? "bg-[#ece7e1] text-[#020202] md:m-[20px]"
+          : "bg-[#020202] text-[#ece7e1] md:w-[1200px] md:mx-auto"
       }`}
     >
-      <Link href="/" className="text-[24px]">
+      <Link href="/" className="text-[20px] md:text-[24px]">
         /khalida.
       </Link>
-      <ul className="flex gap-[20px]">
+      <ul className="hidden md:flex gap-[20px]">
         {navItems.map((item) => (
           <li
             key={item.name}
@@ -38,6 +39,11 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <GiHamburgerMenu
+        className={`text-[26px] md:hidden cursor-pointer ${
+          isHome ? "text-[#020202]" : "text-[#ece7e1]"
+        }`}
+      />
     </div>
   );
 };

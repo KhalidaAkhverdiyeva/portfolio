@@ -11,14 +11,14 @@ export default async function Home() {
       <Navbar />
 
       {/* Grid Section (fills remaining space) */}
-      <div className="flex flex-1 gap-[20px] overflow-hidden mx-[20px] mb-[20px]">
-        <div className="w-[70%] flex flex-col gap-[20px]">
-          <div className="flex gap-[20px] flex-[2]">
-            <div className="font-['ClashDisplay-Bold'] relative text-[#020202]  bg-[#ece7e1] flex items-end p-[20px] w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
-              <span className="text-[40px]">
+      <div className="flex flex-col md:flex-row flex-1 gap-[10px] md:gap-[20px] overflow-hidden mx-[10px] md:mx-[20px] mb-[20px]">
+        <div className="md:w-[70%] flex flex-col gap-[10px] md:gap-[20px]">
+          <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[2]">
+            <div className="font-['ClashDisplay-Bold'] relative text-[#020202]  bg-[#ece7e1] flex items-end p-[20px] md:w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
+              <span className=" text-[20px] md:text-[40px]">
                 Hey, I&apos;m Khalida <br />
                 Frontend Developer <br />
-                <div className="flex">
+                {/* <div className="flex">
                   <span className="mr-[6px]">and </span>
                   <div className="overflow-hidden h-[45px] relative">
                     <div className="flip-wrap block animate-flip">
@@ -42,27 +42,26 @@ export default async function Home() {
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </span>
             </div>
-
-            <div className="w-[30%] flex-1 rounded-[20px] relative overflow-hidden cursor-pointer">
+            <div className="h-[300px] w-full md:h-auto md:w-[30%] flex-1 rounded-[20px] relative md:overflow-hidden cursor-pointer">
               <Image
                 src="/image/bw.me.jpg"
                 alt="me"
                 fill
-                className="object-cover"
+                className="object-cover rounded-[20px]"
               />
-              <div className="font-['ClashDisplay-Bold'] absolute bottom-0 left-[0]  text-[#ECE7E1] text-[46px] font-[700]  px-[20px] py-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+              <div className="absolute bottom-0 left-0 text-[#ECE7E1] text-[36px] md:text-[46px] font-bold px-[20px] py-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                 about.
               </div>
             </div>
           </div>
-          <div className="flex gap-[20px] flex-[1] ">
-            <div className="bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+          <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[1] ">
+            <div className="bg-[#ece7e1] order-2 md:order-1 text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] md:w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
               funnn.
             </div>
-            <div className="bg-[#D1FD0A] relative text-[#020202] font-['ClashDisplay-Bold'] font-[700]  text-[46px] w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+            <div className="bg-[#D1FD0A] order-1 md:order-2 relative text-[#020202] font-['ClashDisplay-Bold'] font-[700]  text-[46px] md:w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
               <Image
                 src="/image/contact.png"
                 alt=""
@@ -75,15 +74,14 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="w-[30%] flex flex-col gap-[20px] ">
+        <div className="md:w-[30%] flex flex-col gap-[20px] ">
           <Link
             href="/work"
             className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[20px] pt-[20px] pb-[20px] cursor-pointer overflow-hidden"
           >
-            <div className="relative w-[600px] h-[200px]">
-              {/* Video positioned inside the iMac screen */}
+            <div className="relative md:w-[600px] md:h-[200px]">
               <video
-                className=" bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[280px] h-[200px] object-cover rounded-[10px] z-0"
+                className=" bw-hover filter grayscale hover:grayscale-0 absolute top-[35px] left-[60px] w-[140px] h-[100px] md:w-[280px] md:h-[200px] object-cover rounded-[10px] z-0"
                 autoPlay
                 muted
                 loop
@@ -91,13 +89,13 @@ export default async function Home() {
                 src="https://res.cloudinary.com/dxtasssta/video/upload/v1745482296/impact-demo_lpcinx.mp4"
               />
 
-              {/* iMac image on top */}
               <Image
                 src="/image/macbook.png"
                 alt="iMac Frame"
                 width={400}
                 height={100}
-                className="z-10 relative"
+                sizes="(max-width: 768px) 200px, 400px"
+                className="w-[200px] md:w-[400px] h-auto z-10 relative"
               />
               <Image
                 src="/image/bw-portrait.png"
