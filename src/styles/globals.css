@@ -2,7 +2,6 @@
 @import url("./clash-display.css");
 @import url("./satoshi.css");
 
-
 body {
   background-color: #020202;
 }
@@ -59,8 +58,52 @@ body {
   }
 }
 
+@keyframes mobileflip {
+  from {
+    margin-top: 0px;
+  }
+  3% {
+    margin-top: -25px;
+  }
+
+  20% {
+    margin-top: -25px;
+  }
+  23% {
+    margin-top: -50px;
+  }
+
+  40% {
+    margin-top: -50px;
+  }
+  43% {
+    margin-top: -75px;
+  }
+
+  60% {
+    margin-top: -75px;
+  }
+  63% {
+    margin-top: -100px;
+  }
+
+  80% {
+    margin-top: -100px;
+  }
+  83% {
+    margin-top: -125px;
+  }
+
+  to {
+    margin-top: -125px;
+  }
+}
+
 .animate-flip {
   animation: flip 10s infinite;
+}
+.animate-mobileflip {
+  animation: mobileflip 10s infinite;
 }
 
 /* loading animation */
@@ -140,7 +183,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ECE7E1; /* Scrollbar color */
+  background-color: #ece7e1; /* Scrollbar color */
   border-radius: 10px; /* Rounded corners */
   border: 2px solid transparent; /* Optional: add space inside */
   background-clip: content-box;

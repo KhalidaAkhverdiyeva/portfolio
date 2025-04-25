@@ -11,73 +11,74 @@ export default async function Home() {
       <Navbar />
 
       {/* Grid Section (fills remaining space) */}
-      <div className="flex flex-col md:flex-row flex-1 gap-[10px] md:gap-[20px] overflow-hidden mx-[10px] md:mx-[20px] mb-[20px]">
+      <div className="flex flex-col md:flex-row flex-1 gap-[10px] md:gap-[20px] overflow-hidden mx-[10px] md:mx-[20px] mb-[10px] md:mb-[20px]">
         <div className="md:w-[70%] flex flex-col gap-[10px] md:gap-[20px]">
           <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[2]">
-            <div className="font-['ClashDisplay-Bold'] relative text-[#020202]  bg-[#ece7e1] flex items-end p-[20px] md:w-[70%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
-              <span className=" text-[20px] md:text-[40px]">
+            <div className="font-['ClashDisplay-Bold'] min-h-[250px] md:h-auto  relative text-[#020202]  bg-[#ece7e1] flex items-end p-[20px] md:w-[75%] flex-[3] rounded-[20px] leading-tight cursor-pointer">
+              <div className=" text-[20px] md:text-[40px]">
                 Hey, I&apos;m Khalida <br />
                 Frontend Developer <br />
-                {/* <div className="flex">
+                <div className="flex">
                   <span className="mr-[6px]">and </span>
-                  <div className="overflow-hidden h-[45px] relative">
-                    <div className="flip-wrap block animate-flip">
-                      <span className="block  h-[45px] leading-[48px]">
+                  <div className="overflow-hidden h-[25px] md:h-[45px] relative">
+                    <div className="flip-wrap block animate-[mobileflip_10s_infinite]  md:animate-[flip_10s_infinite]">
+                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
                         a tea lover.
                       </span>
-                      <span className="block  h-[45px] leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
                         a movie buff.
                       </span>
-                      <span className="block  h-[45px] leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
                         a camping enthusiast.
                       </span>
-                      <span className="block  h-[45px] leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
                         a terrible singer.
                       </span>
-                      <span className="block  h-[45px] leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
                         The Strokes fan.
                       </span>
-                      <span className="block  h-[45px] leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
                         a tea lover.
                       </span>
                     </div>
                   </div>
-                </div> */}
-              </span>
+                </div>
+              </div>
             </div>
-            <div className="h-[300px] w-full md:h-auto md:w-[30%] flex-1 rounded-[20px] relative md:overflow-hidden cursor-pointer">
+            <div className="h-[250px]  md:h-auto w-full md:w-[25%] rounded-[20px] relative overflow-hidden cursor-pointer">
               <Image
                 src="/image/bw.me.jpg"
                 alt="me"
                 fill
                 className="object-cover rounded-[20px]"
+                sizes="(max-width: 768px) 100vw, 30vw"
               />
-              <div className="absolute bottom-0 left-0 text-[#ECE7E1] text-[36px] md:text-[46px] font-bold px-[20px] py-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+              <div className="absolute bottom-0 left-0 font-['ClashDisplay-Bold'] shadow text-[28px] md:text-[46px] text-[#ECE7E1] font-bold p-4 md:p-[20px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                 about.
               </div>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[1] ">
-            <div className="bg-[#ece7e1] order-2 md:order-1 text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] md:w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+          <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[1]">
+            <div className="bg-[#ece7e1] flex items-end order-2 md:order-1 h-[250px] md:h-auto text-[#020202] text-[32px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer">
               funnn.
             </div>
-            <div className="bg-[#D1FD0A] order-1 md:order-2 relative text-[#020202] font-['ClashDisplay-Bold'] font-[700]  text-[46px] md:w-[50%] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+            <div className="bg-[#D1FD0A] flex items-end order-1 md:order-2 h-[250px] md:h-auto text-[#020202] text-[32px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer">
               <Image
                 src="/image/contact.png"
                 alt=""
                 width={60}
                 height={200}
-                className="absolute top-0 right-[30px] z-[50]"
+                className="absolute top-0 right-[30px] z-[50] hidden md:block"
               />
               contact.
             </div>
           </div>
         </div>
 
-        <div className="md:w-[30%] flex flex-col gap-[20px] ">
+        <div className="md:w-[30%] flex flex-col gap-[10px] md:gap-[20px] ">
           <Link
             href="/work"
-            className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[20px] pt-[20px] pb-[20px] cursor-pointer overflow-hidden"
+            className="bg-[#ece7e1] flex flex-col justify-between items-start text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] rounded-[20px] flex-[5] px-[10px] md:px-[20px] pt-[10px] md:pt-[20px] pb-[10px] md:pb-[20px] cursor-pointer overflow-hidden"
           >
             <div className="relative md:w-[600px] md:h-[200px]">
               <video
@@ -110,7 +111,7 @@ export default async function Home() {
               work.
             </span>
           </Link>
-          <div className=" bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] cursor-pointer ">
+          <div className=" bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[46px] flex-[1] rounded-[20px] flex items-end p-[10px] md:p-[20px] cursor-pointer ">
             skills & tools.
           </div>
         </div>
