@@ -8,7 +8,7 @@ export default async function Work() {
   return (
     <div>
       <Navbar />
-      {/* <Projects /> */}
+      <Projects />
     </div>
   );
 }
