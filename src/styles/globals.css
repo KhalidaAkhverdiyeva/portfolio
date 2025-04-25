@@ -3,6 +3,7 @@
 @import url("./satoshi.css");
 
 body {
+  font-family: "Clash Display", "Satoshi", Arial, sans-serif;
   background-color: #020202;
 }
 
@@ -15,7 +16,7 @@ body {
   filter: grayscale(0%);
 }
 
-/* text flip animation */
+/* text flip animation  */
 
 @keyframes flip {
   from {

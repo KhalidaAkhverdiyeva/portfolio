@@ -22,22 +22,22 @@ export default async function Home() {
                   <span className="mr-[6px]">and </span>
                   <div className="overflow-hidden h-[25px] md:h-[45px] relative">
                     <div className="flip-wrap block animate-[mobileflip_10s_infinite]  md:animate-[flip_10s_infinite]">
-                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[25px] md:leading-[48px]">
                         a tea lover.
                       </span>
-                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[25px] md:leading-[48px]">
                         a movie buff.
                       </span>
-                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[25px] md:leading-[48px]">
                         a camping enthusiast.
                       </span>
-                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[25px] md:leading-[48px]">
                         a terrible singer.
                       </span>
-                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[25px] md:leading-[48px]">
                         The Strokes fan.
                       </span>
-                      <span className="block h-[25px] md:h-[45px] leading-[28px] md:leading-[48px]">
+                      <span className="block h-[25px] md:h-[45px] leading-[25px] md:leading-[48px]">
                         a tea lover.
                       </span>
                     </div>
