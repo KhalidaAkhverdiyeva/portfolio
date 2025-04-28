@@ -105,18 +105,18 @@ const Projects = () => {
     <div>
       <div className="max-w-[906px] mx-auto">
         {/* Title aligned with cards */}
-        <div className="text-[#ECE7E1] font-['ClashDisplay-Bold'] font-[700] text-[24px] mx-[25px] md:text-[46px] mb-10">
+        <div className="text-[#ECE7E1] font-['ClashDisplay-Bold'] font-[700] text-[24px] mx-[25px] md:mx-0 md:text-[46px] md:mb-10">
           Projects.
         </div>
 
         {/* Cards */}
         <div className="flex flex-col md:flex-row gap-[20px] justify-center pb-[50px]">
           {/* Column 1 */}
-          <div className="flex flex-col gap-[20px]">
+          <div className="flex flex-col gap-[20px] m-[20px] md:m-0">
             {projects.slice(0, 3).map((project, index) => (
               <div
                 key={index}
-                className="relative md:md:w-[448px] m-[20px] h-[400px] text-[#020202] rounded-[20px] text-[20px] font-semibold cursor-pointer overflow-hidden"
+                className="relative md:md:w-[448px] h-[400px] text-[#020202] rounded-[20px] text-[20px] font-semibold cursor-pointer overflow-hidden"
                 onClick={() => handleProjectClick(project)}
               >
                 <video
@@ -141,11 +141,11 @@ const Projects = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="flex flex-col gap-[20px]">
+          <div className="flex flex-col gap-[20px] m-[20px] md:m-0">
             {projects.slice(3).map((project, index) => (
               <div
                 key={index}
-                className="relative md:w-[448px] m-[20px] h-[454px] text-[#020202] rounded-[20px] font-['ClashDisplay-Bold'] text-[20px] font-semibold cursor-pointer overflow-hidden"
+                className="relative md:w-[448px]  h-[454px] text-[#020202] rounded-[20px] font-['ClashDisplay-Bold'] text-[20px] font-semibold cursor-pointer overflow-hidden"
                 onClick={() => handleProjectClick(project)}
               >
                 <video
