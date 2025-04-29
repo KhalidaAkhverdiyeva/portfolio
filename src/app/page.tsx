@@ -65,7 +65,10 @@ export default async function Home() {
             <div className="bg-[#ece7e1] flex items-end order-2 md:order-1 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer">
               !?
             </div>
-            <div className="bg-[#D1FD0A] flex items-end order-1 md:order-2 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer">
+            <Link
+              href="/contact"
+              className="bg-[#D1FD0A] flex items-end order-1 md:order-2 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer"
+            >
               <Image
                 src="/image/contact.png"
                 alt=""
@@ -74,7 +77,7 @@ export default async function Home() {
                 className="absolute top-0 right-[30px] z-[50]  md:block"
               />
               contact.
-            </div>
+            </Link>
           </div>
         </div>
 
