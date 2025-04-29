@@ -47,7 +47,7 @@ export const FloatingTag: React.FC<FloatingTagProps> = ({
   return (
     <>
       <div
-        className="absolute font-['ClashDisplay-Bold'] px-4 py-2 rounded-[30px] border-[2px] text-[22px] cursor-pointer transition-transform duration-300 hover:scale-105"
+        className="absolute whitespace-nowrap font-['ClashDisplay-Bold'] px-4 py-2 rounded-[30px] border-[2px] text-[22px] cursor-pointer transition-transform duration-300 hover:scale-105"
         style={{
           backgroundColor: "#d4ff00",
           borderColor: "#d4ff00",
