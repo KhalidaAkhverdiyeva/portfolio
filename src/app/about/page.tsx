@@ -130,13 +130,13 @@ export default async function About() {
             <h1 className="text-4xl md:text-5xl font-bold text-[#ECE7E1] mb-6 font-['ClashDisplay-Bold']">
               Who am I ?
             </h1>
-            <p className="text-lg text-[#ECE7E1] leading-relaxed mb-4">
-              I&aposm a Frontend Developer based in Azerbaijan, passionate about
-              creating beautiful and functional web experiences. With a keen eye
-              for design and strong technical skills, I bridge the gap between
-              aesthetics and functionality.
+            <p className="font-['Satoshi-Regular'] text-lg text-[#ECE7E1] leading-relaxed mb-4">
+              I&apos;m a Frontend Developer based in Azerbaijan, passionate
+              about creating beautiful and functional web experiences. With a
+              keen eye for design and strong technical skills, I bridge the gap
+              between aesthetics and functionality.
             </p>
-            <p className="text-lg text-[#ECE7E1] leading-relaxed">
+            <p className="font-['Satoshi-Regular']  text-lg text-[#ECE7E1] leading-relaxed">
               My journey in web development has led me to work with modern
               technologies like React, Next.js, and TypeScript, always striving
               to create responsive and user-friendly interfaces that leave a
