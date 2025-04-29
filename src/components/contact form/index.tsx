@@ -17,7 +17,7 @@ const MyForm = () => {
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -36,7 +36,7 @@ const MyForm = () => {
     setIsSubmitDisabled(Object.values(newErrors).includes(true));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission here
     alert("Form Submitted");
