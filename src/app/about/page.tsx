@@ -7,81 +7,146 @@ export default async function About() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const tags = [
     {
-      label: "FOLLOW",
+      label: "BMU",
       info: "Follow me",
-      position: { top: 480, left: 300, rotate: -12 },
+      position: {
+        bottom: 10,
+        left: 643,
+        rotate: 15,
+        mobileBottom: 156,
+        mobileLeft: 163,
+      },
     },
     {
-      label: "ME",
+      label: "Career Switch",
       info: "Who am I",
-      position: { top: 510, left: 360, rotate: 8 },
+      position: {
+        bottom: 27,
+        left: 460,
+        rotate: -15,
+        mobileBottom: 242,
+        mobileLeft: 152,
+      },
     },
     {
-      label: "UI/UX",
+      label: "Code Academy",
       info: "Design thinker",
-      position: { top: 490, left: 420, rotate: -5 },
+      position: {
+        bottom: 47,
+        left: 636,
+        rotate: 25,
+        mobileBottom: 69,
+        mobileLeft: 212,
+      },
     },
     {
-      label: "DESIGNER",
+      label: "Azerbaijan",
       info: "Creative",
-      position: { top: 520, left: 470, rotate: 10 },
+      position: {
+        bottom: 26,
+        left: 831,
+        rotate: -24,
+        mobileBottom: 108,
+        mobileLeft: 12,
+      },
     },
     {
-      label: "MARIYA PETROVA",
+      label: "Khalida Akhverdiyeva",
       info: "That's me!",
-      position: { top: 470, left: 540, rotate: -6 },
+      position: {
+        bottom: 12,
+        left: 959,
+        rotate: -5,
+        mobileBottom: 20,
+        mobileLeft: 14,
+      },
     },
     {
-      label: ":P",
+      label: "Daily Routine",
       info: "Just a fun tag",
-      position: { top: 500, left: 610, rotate: 4 },
+      position: {
+        bottom: 85,
+        left: 761,
+        rotate: -2,
+        mobileBottom: 189,
+        mobileLeft: 236,
+      },
     },
     {
-      label: "2024",
+      label: "Hobbies",
       info: "This year!",
-      position: { top: 530, left: 670, rotate: -8 },
+      position: {
+        bottom: 75,
+        left: 962,
+        rotate: 22,
+        mobileBottom: 119,
+        mobileLeft: 276,
+      },
+    },
+    {
+      label: "Challenges",
+      info: "This year!",
+      position: {
+        bottom: 38,
+        left: 310,
+        rotate: 28,
+        mobileBottom: 207,
+        mobileLeft: 15,
+      },
+    },
+    {
+      label: "Goals",
+      info: "This year!",
+      position: {
+        bottom: 9,
+        left: 257,
+        rotate: -8,
+        mobileBottom: 76,
+        mobileLeft: 118,
+      },
     },
   ];
 
   return (
-      <div className="relative w-full h-screen  overflow-hidden">
-        <Navbar />
-        <div className="flex flex-col md:flex-row items-center p-[15px] md:w-[1200px] md:mx-auto gap-4 md:gap-8">
-          {/* Image Section */}
-          <div className="w-full md:w-2/5">
-            <div className="relative aspect-square md:h-[350px] rounded-full overflow-hidden">
-              <Image
-                src="/image/seviyye2.jpg"
-                alt="Khalida"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Text Section with Frosted Glass Effect */}
-          <div className="w-full md:w-4/5">
-            <div className=" p-8 rounded-2xl border border-white/20">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-['ClashDisplay-Bold']">
-                About Me
-              </h1>
-              <p className="text-lg text-white/90 leading-relaxed mb-4">
-                I'm a Frontend Developer based in Azerbaijan, passionate about
-                creating beautiful and functional web experiences. With a keen
-                eye for design and strong technical skills, I bridge the gap
-                between aesthetics and functionality.
-              </p>
-              <p className="text-lg text-white/90 leading-relaxed">
-                My journey in web development has led me to work with modern
-                technologies like React, Next.js, and TypeScript, always
-                striving to create responsive and user-friendly interfaces that
-                leave a lasting impression.
-              </p>
-            </div>
+    <div className="relative w-scren  md:h-screen  overflow-hidden">
+      <Navbar />
+      <div className="flex flex-col md:flex-row items-center p-[15px] md:w-[1200px] md:mx-auto gap-4 md:gap-8">
+        {/* Image Section */}
+        <div className="w-full md:w-2/5">
+          <div className="relative aspect-square md:h-[350px] rounded-full overflow-hidden">
+            <Image
+              src="/image/seviyye2.jpg"
+              alt="Khalida"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
-        {tags.map((tag, i) => (
+
+        {/* Text Section with Frosted Glass Effect */}
+        <div className="w-full md:w-4/5">
+          <div className=" p-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#ECE7E1] mb-6 font-['ClashDisplay-Bold']">
+              Who am I ?
+            </h1>
+            <p className="text-lg text-[#ECE7E1] leading-relaxed mb-4">
+              I'm a Frontend Developer based in Azerbaijan, passionate about
+              creating beautiful and functional web experiences. With a keen eye
+              for design and strong technical skills, I bridge the gap between
+              aesthetics and functionality.
+            </p>
+            <p className="text-lg text-[#ECE7E1] leading-relaxed">
+              My journey in web development has led me to work with modern
+              technologies like React, Next.js, and TypeScript, always striving
+              to create responsive and user-friendly interfaces that leave a
+              lasting impression.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="h-[300px]">
+        {tags.map((tag) => (
           <FloatingTag
             key={tag.label}
             label={tag.label}
@@ -90,5 +155,6 @@ export default async function About() {
           />
         ))}
       </div>
+    </div>
   );
 }
