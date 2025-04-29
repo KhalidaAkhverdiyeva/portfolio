@@ -1,32 +1,51 @@
 import Navbar from "@/components/navbar";
 import React from "react";
 import Image from "next/image";
+import { FloatingTag } from "@/components/floating tags";
 
 export default async function About() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
+  const tags = [
+    {
+      label: "FOLLOW",
+      info: "Follow me",
+      position: { top: 480, left: 300, rotate: -12 },
+    },
+    {
+      label: "ME",
+      info: "Who am I",
+      position: { top: 510, left: 360, rotate: 8 },
+    },
+    {
+      label: "UI/UX",
+      info: "Design thinker",
+      position: { top: 490, left: 420, rotate: -5 },
+    },
+    {
+      label: "DESIGNER",
+      info: "Creative",
+      position: { top: 520, left: 470, rotate: 10 },
+    },
+    {
+      label: "MARIYA PETROVA",
+      info: "That's me!",
+      position: { top: 470, left: 540, rotate: -6 },
+    },
+    {
+      label: ":P",
+      info: "Just a fun tag",
+      position: { top: 500, left: 610, rotate: 4 },
+    },
+    {
+      label: "2024",
+      info: "This year!",
+      position: { top: 530, left: 670, rotate: -8 },
+    },
+  ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/image/flow.jpeg"
-          alt="Background"
-          fill
-          quality={100}
-          priority
-          className="object-cover"
-        />
-      </div>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/100 -z-10" />
-
-      {/* Content */}
-      <Navbar />
-
-      {/* Main Content Section */}
-      <div className=" mx-auto  mt-20">
+      <div className="relative w-full h-screen  overflow-hidden">
+        <Navbar />
         <div className="flex flex-col md:flex-row items-center p-[15px] md:w-[1200px] md:mx-auto gap-4 md:gap-8">
           {/* Image Section */}
           <div className="w-full md:w-2/5">
@@ -62,7 +81,14 @@ export default async function About() {
             </div>
           </div>
         </div>
+        {tags.map((tag, i) => (
+          <FloatingTag
+            key={tag.label}
+            label={tag.label}
+            info={tag.info}
+            position={tag.position}
+          />
+        ))}
       </div>
-    </div>
   );
 }
