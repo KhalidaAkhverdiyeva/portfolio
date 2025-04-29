@@ -131,7 +131,7 @@ export default async function About() {
               Who am I ?
             </h1>
             <p className="text-lg text-[#ECE7E1] leading-relaxed mb-4">
-              I'm a Frontend Developer based in Azerbaijan, passionate about
+              I&aposm a Frontend Developer based in Azerbaijan, passionate about
               creating beautiful and functional web experiences. With a keen eye
               for design and strong technical skills, I bridge the gap between
               aesthetics and functionality.
