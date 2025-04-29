@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { TextField } from "@mui/material";
 
@@ -113,8 +113,8 @@ const MyForm = () => {
       <button
         type="submit"
         disabled={isSubmitDisabled}
-        className={`bg-[#d4ff00] text-black py-3 px-6 rounded font-semibold hover:bg-black hover:text-white transition ${
-          isSubmitDisabled ? "opacity-50 cursor-not-allowed" : ""
+        className={`bg-[#D1FD0A] font-['ClashDisplay-Medium']  text-black py-3 px-6 rounded font-semibold hover:bg-black hover:text-white transition ${
+          isSubmitDisabled ? " cursor-not-allowed" : ""
         }`}
       >
         Send
