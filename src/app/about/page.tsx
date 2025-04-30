@@ -11,7 +11,7 @@ export default async function About() {
       info: "Follow me",
       position: {
         bottom: 10,
-        left: 643,
+        left: 497,
         rotate: 15,
         mobileBottom: 156,
         mobileLeft: 163,
@@ -22,7 +22,7 @@ export default async function About() {
       info: "Who am I",
       position: {
         bottom: 27,
-        left: 460,
+        left: 311,
         rotate: -15,
         mobileBottom: 242,
         mobileLeft: 152,
@@ -33,7 +33,7 @@ export default async function About() {
       info: "Design thinker",
       position: {
         bottom: 47,
-        left: 636,
+        left: 490,
         rotate: 25,
         mobileBottom: 69,
         mobileLeft: 212,
@@ -44,7 +44,7 @@ export default async function About() {
       info: "Creative",
       position: {
         bottom: 26,
-        left: 831,
+        left: 685,
         rotate: -24,
         mobileBottom: 108,
         mobileLeft: 12,
@@ -55,7 +55,7 @@ export default async function About() {
       info: "That's me!",
       position: {
         bottom: 12,
-        left: 959,
+        left: 813,
         rotate: -5,
         mobileBottom: 20,
         mobileLeft: 14,
@@ -66,7 +66,7 @@ export default async function About() {
       info: "Just a fun tag",
       position: {
         bottom: 85,
-        left: 761,
+        left: 615,
         rotate: -2,
         mobileBottom: 189,
         mobileLeft: 236,
@@ -77,7 +77,7 @@ export default async function About() {
       info: "This year!",
       position: {
         bottom: 75,
-        left: 962,
+        left: 816,
         rotate: 22,
         mobileBottom: 119,
         mobileLeft: 276,
@@ -88,7 +88,7 @@ export default async function About() {
       info: "This year!",
       position: {
         bottom: 38,
-        left: 310,
+        left: 164,
         rotate: 28,
         mobileBottom: 207,
         mobileLeft: 15,
@@ -99,7 +99,7 @@ export default async function About() {
       info: "This year!",
       position: {
         bottom: 9,
-        left: 257,
+        left: 111,
         rotate: -8,
         mobileBottom: 76,
         mobileLeft: 118,
@@ -126,7 +126,7 @@ export default async function About() {
 
         {/* Text Section with Frosted Glass Effect */}
         <div className="w-full md:w-4/5">
-          <div className=" p-8">
+          <div className=" md:p-8">
             <h1 className="text-4xl md:text-5xl font-bold text-[#ECE7E1] mb-6 font-['ClashDisplay-Bold']">
               Who am I ?
             </h1>
@@ -145,15 +145,17 @@ export default async function About() {
           </div>
         </div>
       </div>
-      <div className="h-[300px]">
-        {tags.map((tag) => (
-          <FloatingTag
-            key={tag.label}
-            label={tag.label}
-            info={tag.info}
-            position={tag.position}
-          />
-        ))}
+      <div className="md:absolute  md:bottom-0  h-[300px] w-full flex justify-center items-end">
+        <div className="relative w-[1200px] h-full">
+          {tags.map((tag) => (
+            <FloatingTag
+              key={tag.label}
+              label={tag.label}
+              info={tag.info}
+              position={tag.position}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
