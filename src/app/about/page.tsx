@@ -146,7 +146,7 @@ export default async function About() {
         </div>
       </div>
       <div className="md:absolute  md:bottom-0  h-[300px] w-full flex justify-center items-end">
-        <div className="relative w-[1200px] h-full">
+        <div className="relative w-[100%] md:w-[1200px] h-full">
           {tags.map((tag) => (
             <FloatingTag
               key={tag.label}
