@@ -13,8 +13,8 @@ export default async function About() {
         bottom: 10,
         left: 497,
         rotate: 15,
-        mobileBottom: 156,
-        mobileLeft: 163,
+        mobileBottom: 136,
+        mobileLeft: 124,
       },
     },
     {
@@ -24,8 +24,8 @@ export default async function About() {
         bottom: 27,
         left: 311,
         rotate: -15,
-        mobileBottom: 242,
-        mobileLeft: 152,
+        mobileBottom: 214,
+        mobileLeft: 105,
       },
     },
     {
@@ -35,8 +35,8 @@ export default async function About() {
         bottom: 47,
         left: 490,
         rotate: 25,
-        mobileBottom: 69,
-        mobileLeft: 212,
+        mobileBottom: 63,
+        mobileLeft: 156,
       },
     },
     {
@@ -46,8 +46,8 @@ export default async function About() {
         bottom: 26,
         left: 685,
         rotate: -24,
-        mobileBottom: 108,
-        mobileLeft: 12,
+        mobileBottom: 98,
+        mobileLeft: 10,
       },
     },
     {
@@ -68,8 +68,8 @@ export default async function About() {
         bottom: 85,
         left: 615,
         rotate: -2,
-        mobileBottom: 189,
-        mobileLeft: 236,
+        mobileBottom: 173,
+        mobileLeft: 174,
       },
     },
     {
@@ -79,8 +79,8 @@ export default async function About() {
         bottom: 75,
         left: 816,
         rotate: 22,
-        mobileBottom: 119,
-        mobileLeft: 276,
+        mobileBottom: 107,
+        mobileLeft: 198,
       },
     },
     {
@@ -90,8 +90,8 @@ export default async function About() {
         bottom: 38,
         left: 164,
         rotate: 28,
-        mobileBottom: 207,
-        mobileLeft: 15,
+        mobileBottom: 178,
+        mobileLeft: 8,
       },
     },
     {
@@ -101,8 +101,8 @@ export default async function About() {
         bottom: 9,
         left: 111,
         rotate: -8,
-        mobileBottom: 76,
-        mobileLeft: 118,
+        mobileBottom: 67,
+        mobileLeft: 83,
       },
     },
   ];
@@ -146,7 +146,7 @@ export default async function About() {
         </div>
       </div>
       <div className="md:absolute  md:bottom-0  h-[300px] w-full flex justify-center items-end">
-        <div className="relative w-[100%] md:w-[1200px] h-full">
+        <div className="relative h-[300px] w-[1200px] min-[375px]:ml-[20px] min-[425px]:ml-[50px] md:ml-0">
           {tags.map((tag) => (
             <FloatingTag
               key={tag.label}
