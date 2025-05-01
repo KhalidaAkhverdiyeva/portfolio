@@ -62,9 +62,12 @@ export default async function Home() {
             </Link>
           </div>
           <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[1]">
-            <div className="bg-[#ece7e1] flex items-end order-2 md:order-1 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer">
-              !?
-            </div>
+            <Link
+              href="/cvfinder"
+              className="bg-[#ece7e1] flex items-end order-2 md:order-1 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer"
+            >
+              4fun
+            </Link>
             <Link
               href="/contact"
               className="bg-[#D1FD0A] flex items-end order-1 md:order-2 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer"
