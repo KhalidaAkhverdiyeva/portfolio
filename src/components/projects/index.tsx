@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import SwipeableTemporaryDrawer from "../drawer";
+import SwipeableTemporaryDrawer from "../sidebar";
 import Project from "@/types";
 
 const Projects = () => {
