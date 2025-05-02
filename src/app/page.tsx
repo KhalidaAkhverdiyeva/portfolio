@@ -64,22 +64,47 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] flex-[1]">
             <Link
               href="/cvfinder"
-              className="bg-[#ece7e1] flex items-end order-2 md:order-1 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer"
+              className=" border-solid border-[1px] border-[#ece7e1] md:border-none md:bg-[#ece7e1] text-[#ece7e1] md:text-[#020202]  flex items-end order-2 md:order-1 h-auto  text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer"
             >
-              cv
+              cv.
+              <Image
+                src="/image/chat.png"
+                alt="me"
+                width={200}
+                height={200}
+                className=" rounded-[20px]"
+              />
+
+              <span className=" font-['Satoshi-Regular'] text-[#ece7e1] md:text-[#020202] text-[12px] md:hidden">A CV? Yes. In a drawer? Also yes.</span>
             </Link>
             <Link
               href="/contact"
-              className="bg-[#D1FD0A] flex items-end order-1 md:order-2 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer"
+              className="bg-[#D1FD0A] flex flex-col justify-end items-start order-1 md:order-2 h-[250px] md:h-auto text-[#020202] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer"
             >
+           
+
+              {/* Contact title */}
+              <h2 className="text-[28px] md:text-[46px] mb-1 z-10">contact.</h2>
+
+              {/* Divider line */}
+              <div className="w-[90%] h-[1px] font-['Satoshi-Regular'] md:hidden bg-[#060606] mb-2 z-10" />
+
+              {/* Mobile-only description */}
+              <span className="font-['Satoshi-Regular'] text-[12px] md:hidden z-10">
+                Let’s build something cool together. You can reach out anytime —
+                I dont bite. Whether it’s a big idea or a quick hello. I check
+                my inbox more than I check the weather, so you’ll probably hear
+                back soon.
+              </span>
+
+              {/* Background image */}
               <Image
                 src="/image/contact.png"
                 alt=""
                 width={60}
                 height={200}
-                className="absolute top-0 right-[30px] z-[50]  md:block"
+                className="absolute top-0 right-[30px] z-[0] md:block"
               />
-              contact.
             </Link>
           </div>
         </div>
