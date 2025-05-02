@@ -66,7 +66,7 @@ export default async function Home() {
               href="/cvfinder"
               className="bg-[#ece7e1] flex items-end order-2 md:order-1 h-[250px] md:h-auto text-[#020202] text-[28px] md:text-[46px] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] cursor-pointer"
             >
-              4fun
+              cv
             </Link>
             <Link
               href="/contact"

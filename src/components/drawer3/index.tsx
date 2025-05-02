@@ -4,6 +4,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { useState, useRef } from "react";
+import InsideBox from "./drawerBox";
+import LargeInsideBox from "./largeDrawerBox";
 
 // Animated drawer + handle component
 function AnimatedDrawer({
@@ -13,6 +15,7 @@ function AnimatedDrawer({
   drawerHeight,
   handleOffset = 0.07,
   map,
+  children, // <-- Accept children
 }: {
   isOpen: boolean;
   positionY: number;
@@ -20,6 +23,7 @@ function AnimatedDrawer({
   drawerHeight: number;
   handleOffset?: number;
   map: THREE.Texture;
+  children?: React.ReactNode;
 }) {
   const drawerRef = useRef<THREE.Mesh>(null);
   const handleRef = useRef<THREE.Mesh>(null);
@@ -40,29 +44,30 @@ function AnimatedDrawer({
 
   return (
     <>
+      {/* Drawer box */}
       <mesh ref={drawerRef} position={[0, positionY, 1.01]}>
         <boxGeometry args={[drawerWidth, drawerHeight, 0.05]} />
         <meshStandardMaterial map={map} />
       </mesh>
+
+      {/* Handle */}
       <mesh ref={handleRef} position={[0, positionY, 1.08]}>
         <boxGeometry args={[0.8, 0.05, 0.1]} />
         <meshStandardMaterial color="white" />
       </mesh>
+
+      {/* Contents */}
+      {children && (
+        <group position={[0, positionY, 1.5]} scale={isOpen ? 1 : 0}>
+          {children}
+        </group>
+      )}
     </>
   );
 }
 
 function DrawerCabinet() {
   const woodTexture = useTexture("/textures/wood.jpeg");
-
-  const cabinetMaterials = [
-    new THREE.MeshStandardMaterial({ color: "#4C4C4C" }),
-    new THREE.MeshStandardMaterial({ color: "#4C4C4C" }),
-    new THREE.MeshStandardMaterial({ map: woodTexture }), // top
-    new THREE.MeshStandardMaterial({ color: "#4C4C4C" }),
-    new THREE.MeshStandardMaterial({ color: "#4C4C4C" }),
-    new THREE.MeshStandardMaterial({ color: "#4C4C4C" }),
-  ];
 
   const totalHeight = 3;
   const smallDrawerCount = 2;
@@ -103,7 +108,9 @@ function DrawerCabinet() {
           drawerWidth={newSmallDrawerWidth}
           drawerHeight={smallDrawerHeight}
           map={woodTexture}
-        />
+        >
+          <InsideBox isOpen={openSmallDrawers[i]} />
+        </AnimatedDrawer>
       </group>
     );
   });
@@ -114,14 +121,43 @@ function DrawerCabinet() {
     <group position={[0, 0.1, 0]}>
       {" "}
       {/* Cabinet Frame */}
-      <mesh position={[0, totalHeight / 2, 0]} material={cabinetMaterials}>
-        <boxGeometry args={[newLargeDrawerWidth, totalHeight, 2]} />
-      </mesh>
-      {/* Top Slab */}
-      <mesh position={[0, totalHeight + 0.1, 0]}>
-        <boxGeometry args={[newLargeDrawerWidth + 0.2, 0.2, 2.1]} />
-        <meshStandardMaterial map={woodTexture} />
-      </mesh>
+      <group position={[0, 0, 0]}>
+        {/* Left side */}
+        <mesh position={[-newLargeDrawerWidth / 2, totalHeight / 2, 0]}>
+          <boxGeometry args={[0.1, totalHeight, 2]} />
+          <meshStandardMaterial color="#4C4C4C" />
+        </mesh>
+
+        {/* Right side */}
+        <mesh position={[newLargeDrawerWidth / 2, totalHeight / 2, 0]}>
+          <boxGeometry args={[0.1, totalHeight, 2]} />
+          <meshStandardMaterial color="#4C4C4C" />
+        </mesh>
+
+        {/* Back */}
+        <mesh position={[0, totalHeight / 2, -1]}>
+          <boxGeometry args={[newLargeDrawerWidth, totalHeight, 0.1]} />
+          <meshStandardMaterial color="#4C4C4C" />
+        </mesh>
+
+        {/* Bottom */}
+        <mesh position={[0, 0, 0]}>
+          <boxGeometry args={[newLargeDrawerWidth, 0.1, 2]} />
+          <meshStandardMaterial color="#4C4C4C" />
+        </mesh>
+
+        {/* Top */}
+        <mesh position={[0, totalHeight, 0]}>
+          <boxGeometry args={[newLargeDrawerWidth, 0.1, 2]} />
+          <meshStandardMaterial color="#4C4C4C" />
+        </mesh>
+
+        {/* Optional: Top Slab */}
+        <mesh position={[0, totalHeight + 0.1, 0]}>
+          <boxGeometry args={[newLargeDrawerWidth + 0.3, 0.2, 2.2]} />
+          <meshStandardMaterial map={woodTexture} />
+        </mesh>
+      </group>
       {/* Small Drawers */}
       {smallDrawers}
       {/* Large Bottom Drawer */}
@@ -132,7 +168,9 @@ function DrawerCabinet() {
           drawerWidth={newLargeDrawerWidth - 0.2}
           drawerHeight={largeDrawerHeight}
           map={woodTexture}
-        />
+        >
+          <LargeInsideBox isOpen={openLargeDrawer} />
+        </AnimatedDrawer>
       </group>
       {/* Wheels */}
       {[-1, 1].map((x) =>
