@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import CVPaper from "./CVpaper";
 
 export default function LargeInsideBox({ isOpen }: { isOpen: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
@@ -68,6 +69,8 @@ export default function LargeInsideBox({ isOpen }: { isOpen: boolean }) {
         <boxGeometry args={[thickness, height, depth]} />
         <meshStandardMaterial color="#cccccc" />
       </mesh>
+        {/* Paper (CV) */}
+        <CVPaper isVisible={isOpen} />
     </group>
   );
 }
