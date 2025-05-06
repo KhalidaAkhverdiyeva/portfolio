@@ -72,17 +72,16 @@ export default async function Home() {
                 alt="me"
                 width={200}
                 height={200}
-                className=" rounded-[20px]"
+                className=" rounded-[20px] md:hidden"
               />
-
-              <span className=" font-['Satoshi-Regular'] text-[#ece7e1] md:text-[#020202] text-[12px] md:hidden">A CV? Yes. In a drawer? Also yes.</span>
+              <span className=" font-['Satoshi-Regular'] text-[#ece7e1] md:text-[#020202] text-[12px] md:hidden">
+                A CV? Yes. In a drawer? Also yes.
+              </span>
             </Link>
             <Link
               href="/contact"
               className="bg-[#D1FD0A] flex flex-col justify-end items-start order-1 md:order-2 h-[250px] md:h-auto text-[#020202] w-full md:w-[50%] rounded-[20px] p-6 md:p-[20px] font-['ClashDisplay-Bold'] relative cursor-pointer"
             >
-           
-
               {/* Contact title */}
               <h2 className="text-[28px] md:text-[46px] mb-1 z-10">contact.</h2>
 
@@ -145,9 +144,12 @@ export default async function Home() {
               work.
             </span>
           </Link>
-          <div className=" bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[28px] md:text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] py-[10px] cursor-pointer ">
+          <Link
+            href="/skills"
+            className=" bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[28px] md:text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] py-[10px] cursor-pointer "
+          >
             skills & tools.
-          </div>
+          </Link>
         </div>
       </div>
     </div>

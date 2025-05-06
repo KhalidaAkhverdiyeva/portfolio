@@ -118,7 +118,7 @@ function DrawerCabinet() {
   const bottomDrawerY = gap + largeDrawerHeight / 2;
 
   return (
-    <group position={[0, 0.1, 0]}>
+    <group position={[0, -1, 0.1]}>
       {" "}
       {/* Cabinet Frame */}
       <group position={[0, 0, 0]}>
