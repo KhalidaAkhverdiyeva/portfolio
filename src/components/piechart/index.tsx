@@ -38,39 +38,19 @@ export default function PieChart({ id, title, data }: PieChartProps) {
 
     series.slices.template.setAll({ cornerRadius: 8 });
 
-    series.children.push(
-      am5.Label.new(root, {
-        centerX: am5.percent(50),
-        centerY: am5.percent(50),
-        text: `${title}: {valueSum}`,
-        populateText: true,
-        fontSize: "1.5em",
-      })
-    );
-
     series.labels.template.setAll({ textType: "circular" });
     series.states.create("hidden", { endAngle: -90 });
     series.data.setAll(data);
     series.appear(1000, 100);
     series.labels.template.setAll({
+      text: "{category}", // Only category name
       textType: "circular",
       fill: am5.color(0xffffff),
     });
 
-    series.children.push(
-      am5.Label.new(root, {
-        centerX: am5.percent(50),
-        centerY: am5.percent(50),
-        text: `${title}: {valueSum}`,
-        populateText: true,
-        fontSize: "1.5em",
-        fill: am5.color(0xffffff),
-      })
-    );
-
     series.slices.template.adapters.add("fill", (fill, target) => {
       const index = (target.dataItem as any)?.index || 0;
-      const colors = [0xff6384, 0x36a2eb, 0xffce56, 0x4bc0c0, 0xf77825];
+      const colors = [0xffffff, 0xffffff, 0xffffff, 0xffffff, 0xffffff];
       return am5.color(colors[index % colors.length]);
     });
 
@@ -79,5 +59,12 @@ export default function PieChart({ id, title, data }: PieChartProps) {
     };
   }, [id, title, data]);
 
-  return <div id={id} className="w-full h-[300px]" />;
+  return (
+    <div className="p-4 border border-white box-border w-[50%] max-w-[400px] rounded-[20px]">
+      <div className="text-center mb-2">
+        <span className="text-white">Frameworks & Libraries</span>
+      </div>
+      <div id={id} className="w-full h-[300px]" />
+    </div>
+  );
 }

@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const RadarChart = () => {
   useEffect(() => {
     // Create root
-    const root = am5.Root.new("chartdiv");
+    const root = am5.Root.new("chartdivRadar");
     root._logo?.dispose();
 
     root.setThemes([am5themes_Animated.new(root)]);
@@ -146,7 +146,14 @@ const RadarChart = () => {
     };
   }, []);
 
-  return <div id="chartdiv" style={{ width: "50%", height: "300px" }} />;
+  return (
+    <div className="p-4 border border-white box-border w-[50%] max-w-[400px] rounded-[20px]">
+      <div className="text-center mb-2">
+        <span className="text-white">Core Fundamentals</span>
+      </div>
+      <div id="chartdivRadar" className="w-[100%] h-[300px]" />
+    </div>
+  );
 };
 
 export default RadarChart;
