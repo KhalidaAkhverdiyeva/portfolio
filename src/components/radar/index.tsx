@@ -29,25 +29,25 @@ const RadarChart = () => {
 
     const data = [
       {
-        category: "JavaScript",
+        category: "Nodemailer",
         value: 80,
         full: 100,
         columnSettings: { fill: chart.get("colors")?.getIndex(0) },
       },
       {
-        category: "TypeScript",
+        category: "MangoDB",
         value: 85,
         full: 100,
         columnSettings: { fill: chart.get("colors")?.getIndex(1) },
       },
       {
-        category: "CSS3/SCSS/Tailwind",
+        category: "Express.js",
         value: 92,
         full: 100,
         columnSettings: { fill: chart.get("colors")?.getIndex(2) },
       },
       {
-        category: "HTML5",
+        category: " Node.js",
         value: 98,
         full: 100,
         columnSettings: { fill: chart.get("colors")?.getIndex(3) },
@@ -149,7 +149,9 @@ const RadarChart = () => {
   return (
     <div className="p-4 border border-white box-border w-[50%] max-w-[400px] rounded-[20px]">
       <div className="text-center mb-2">
-        <span className="text-white">Core Fundamentals</span>
+        <span className="text-white font-['ClashDisplay-Bold'] text-[24px]">
+          Backend
+        </span>
       </div>
       <div id="chartdivRadar" className="w-[100%] h-[300px]" />
     </div>

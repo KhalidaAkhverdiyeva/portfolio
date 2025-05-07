@@ -62,7 +62,9 @@ export default function PieChart({ id, title, data }: PieChartProps) {
   return (
     <div className="p-4 border border-white box-border w-[50%] max-w-[400px] rounded-[20px]">
       <div className="text-center mb-2">
-        <span className="text-white">Frameworks & Libraries</span>
+        <span className="text-white font-['ClashDisplay-Bold'] text-[24px]">
+          Core Fundamentals
+        </span>
       </div>
       <div id={id} className="w-full h-[300px]" />
     </div>

@@ -1,80 +1,79 @@
-// app/components/HalfPieChart.tsx
 "use client";
 
-import { useEffect } from "react";
-import * as am5 from "@amcharts/amcharts5";
-import * as am5percent from "@amcharts/amcharts5/percent";
-import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
+import React from "react";
+import {
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
-export default function HalfPieChart() {
-  useEffect(() => {
-    const chartId = "chartdiv-halfpie";
+// Type definition for a skill
+type Skill = {
+  title: string;
+  items: string[];
+  level: number;
+};
 
-    // Dispose existing root if it exists
-    const existingRoot = am5.registry.rootElements.find(
-      (r) => r.dom.id === chartId
-    );
-    if (existingRoot) {
-      existingRoot.dispose();
-    }
+// Sample skills data
+const skillsData: Skill[] = [
+  {
+    title: "Code Quality",
+    items: ["Chrome DevTools", "ESLint", "Prettier"],
+    level: 90,
+  },
+  {
+    title: "Build Tools",
+    items: ["Webpack", "Vite", "npm / yarn", "ESLint / Prettier"],
+    level: 85,
+  },
+  {
+    title: "Version Control",
+    items: ["Git & GitHub", "Branching", "Pull Requests", "Merge Conflicts"],
+    level: 80,
+  },
+];
 
-    // Create root element
-    const root = am5.Root.new(chartId);
-    root._logo?.dispose();
+// Props for the SkillCircle component
+type SkillCircleProps = Skill;
 
-    root.setThemes([am5themes_Animated.new(root)]);
+const SkillCircle: React.FC<SkillCircleProps> = ({ title, items, level }) => {
+  return (
+    <div className="flex flex-col items-center text-center w-full md:w-1/3 px-4 mb-8">
+      <div className="w-32 h-32 mb-4">
+        <CircularProgressbarWithChildren
+          value={level}
+          styles={buildStyles({
+            pathColor: "#ECE7E1",
+            trailColor: "#2e2e2e",
+          })}
+        >
+          <div className="text-[#ECE7E1] font-bold text-lg font-['ClashDisplay-SemiBold']">
+            {level}%
+          </div>
+        </CircularProgressbarWithChildren>
+      </div>
+      <h3 className="text-lg font-semibold text-[#ECE7E1] mb-2 font-['ClashDisplay-Bold']">
+        {title}
+      </h3>
+      <ul className="text-sm font-['Satoshi-Regular'] text-gray-300 list-disc list-inside text-left">
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-    // Set chart background to transparent
-    root.dom.style.backgroundColor = "transparent";
+const FrontendSkills: React.FC = () => {
+  return (
+    <section className="border border-[#ECE7E1] text-[#ECE7E1] p-8 rounded-xl w-full">
+      <div className="flex flex-col md:flex-row justify-between items-start">
+        {skillsData.map((skill, index) => (
+          <SkillCircle key={index} {...skill} />
+        ))}
+      </div>
+    </section>
+  );
+};
 
-    const chart = root.container.children.push(
-      am5percent.PieChart.new(root, {
-        startAngle: 180,
-        endAngle: 360,
-        layout: root.verticalLayout,
-        innerRadius: am5.percent(50),
-      })
-    );
-
-    const series = chart.series.push(
-      am5percent.PieSeries.new(root, {
-        startAngle: 180,
-        endAngle: 360,
-        valueField: "value",
-        categoryField: "category",
-        alignLabels: false,
-      })
-    );
-
-    series.states.create("hidden", {
-      startAngle: 180,
-      endAngle: 180,
-    });
-
-    // Slice style
-    series.slices.template.setAll({
-      cornerRadius: 5,
-      strokeWidth: 2,
-    });
-
-    // Hide ticks
-    series.ticks.template.setAll({
-      forceHidden: true,
-    });
-
-    // Label styling for white text
-    series.labels.template.setAll({
-      fill: am5.color(0xffffff),
-      fontSize: 14,
-    });
-
-    series.data.setAll([
-      { value: 7, category: "One" },
-      { value: 7, category: "Two" },
-    ]);
-
-    return () => root.dispose();
-  }, []);
-
-  return <div id="chartdiv-halfpie" className="w-full h-[400px] bg-black" />;
-}
+export default FrontendSkills;
