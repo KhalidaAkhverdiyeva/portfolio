@@ -43,7 +43,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ title, items, level }) => {
         <CircularProgressbarWithChildren
           value={level}
           styles={buildStyles({
-            pathColor: "#D1FD0A",
+            pathColor: "#97B9FF",
             trailColor: "#2e2e2e",
           })}
         >

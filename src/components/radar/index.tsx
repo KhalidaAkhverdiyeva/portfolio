@@ -16,10 +16,10 @@ const RadarChart = () => {
     root.setThemes([am5themes_Animated.new(root)]);
     const customColors = am5.ColorSet.new(root, {
       colors: [
-        am5.color("#97B9FF"), // red-orange
-        am5.color("#97B9FF"), // sky blue
-        am5.color("#97B9FF"), // lime green
-        am5.color("#97B9FF"), // pink
+        am5.color("#020202"), // red-orange
+        am5.color("#020202"), // sky blue
+        am5.color("#020202"), // lime green
+        am5.color("#020202"), // pink
       ],
       reuse: false,
     });
@@ -72,7 +72,7 @@ const RadarChart = () => {
     cursor.lineY.set("visible", false);
 
     const xRenderer = am5radar.AxisRendererCircular.new(root, {});
-    xRenderer.labels.template.setAll({ radius: 10, fill: am5.color(0x020202) });
+    xRenderer.labels.template.setAll({ radius: 10, fill: am5.color(0xffea81) });
     xRenderer.grid.template.setAll({ forceHidden: true });
 
     const xAxis = chart.xAxes.push(
@@ -156,9 +156,9 @@ const RadarChart = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-[#020202] border-solid border-[2px] border-[#2E2E2E] box-border md:w-[50%] rounded-[20px]">
+    <div className="p-4 bg-[#FFEA81] border-solid border-[2px] border-[#2E2E2E] box-border md:w-[50%] rounded-[20px]">
       <div className="text-center mb-2">
-        <span className="text-[#ECE7E1] font-['ClashDisplay-Bold'] text-[24px]">
+        <span className="text-[#020202] font-['ClashDisplay-Bold'] text-[24px]">
           Backend
         </span>
       </div>
@@ -166,32 +166,32 @@ const RadarChart = () => {
       <div id="chartdivRadar" className="w-[100%] h-[300px]" />
 
       {/* Custom Legend */}
-      <div className="mt-4 flex flex-wrap gap-4 justify-center text-[#ECE7E1] text-[14px]">
+      <div className="mt-4 flex flex-wrap gap-4 justify-center text-[#020202] text-[14px] font-['Satoshi-Regular']">
         <div className="flex items-center gap-2">
           <span
             className="w-3 h-3 rounded-sm"
-            style={{ backgroundColor: "#97B9FF" }}
+            style={{ backgroundColor: "#020202" }}
           ></span>
           Nodemailer
         </div>
         <div className="flex items-center gap-2">
           <span
             className="w-3 h-3 rounded-sm"
-            style={{ backgroundColor: "#97B9FF" }}
+            style={{ backgroundColor: "#020202" }}
           ></span>
           MangoDB
         </div>
         <div className="flex items-center gap-2">
           <span
             className="w-3 h-3 rounded-sm"
-            style={{ backgroundColor: "#97B9FF" }}
+            style={{ backgroundColor: "#020202" }}
           ></span>
           Express.js
         </div>
         <div className="flex items-center gap-2">
           <span
             className="w-3 h-3 rounded-sm"
-            style={{ backgroundColor: "#97B9FF" }}
+            style={{ backgroundColor: "#020202" }}
           ></span>
           Node.js
         </div>

@@ -146,7 +146,7 @@ export default async function Home() {
           </Link>
           <Link
             href="/skills"
-            className=" bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[28px] md:text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] py-[10px] cursor-pointer "
+            className="   bg-[#ece7e1] text-[#020202] font-['ClashDisplay-Bold'] font-[700] text-[28px] md:text-[46px] flex-[1] rounded-[20px] flex items-end px-[20px] py-[10px] cursor-pointer "
           >
             skills & tools.
           </Link>
