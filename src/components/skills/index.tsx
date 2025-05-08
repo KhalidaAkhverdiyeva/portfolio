@@ -69,7 +69,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ title, items, level }) => {
 
 const FrontendSkills: React.FC = () => {
   return (
-    <section className="border-solid border-[1px] border-[#ECE7E1] text-[#ECE7E1] p-4 md:p-8 rounded-xl  w-full">
+    <section className="border-solid border-[2px] border-[#2E2E2E] text-[#ECE7E1] p-4 md:p-8 rounded-xl  w-full">
       <div className="flex flex-wrap justify-start mt-[15px] md:mt-0">
         {skillsData.map((skill, index) => (
           <SkillCircle key={index} {...skill} />

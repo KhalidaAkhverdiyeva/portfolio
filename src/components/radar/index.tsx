@@ -156,7 +156,7 @@ const RadarChart = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-[#020202] border-solid border-[1px] border-[#ECE7E1] box-border md:w-[50%] rounded-[20px]">
+    <div className="p-4 bg-[#020202] border-solid border-[2px] border-[#2E2E2E] box-border md:w-[50%] rounded-[20px]">
       <div className="text-center mb-2">
         <span className="text-[#ECE7E1] font-['ClashDisplay-Bold'] text-[24px]">
           Backend

@@ -21,19 +21,10 @@ export default async function Skills() {
       <div className="md:w-[1100px] mx-auto flex flex-col gap-[10px] md:gap-[20px] my-[20px] md:my-[50px] px-[10px]">
         <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] ">
           <PieChart id="chartdiv1" title="First" data={data1} />
-
-          <div className="hidden md:block"></div>
-          <div className="md:hidden">
-            <BarThree />
-          </div>
+          <FrontendSkills />
         </div>
         <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px]">
-          <div className="hidden md:block">
-            <BarThree />
-          </div>
-          <div className="md:hidden">
-            <FrontendSkills />
-          </div>
+          <BarThree />
           <RadarChart />
         </div>
       </div>
