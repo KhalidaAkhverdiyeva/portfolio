@@ -36,23 +36,38 @@ export default function PieChart({ id, title, data }: PieChartProps) {
       })
     );
 
-    series.slices.template.setAll({ cornerRadius: 8 });
+    const colorSet = am5.ColorSet.new(root, {
+      colors: [
+        am5.color(0x020202),
+        am5.color(0xc26434),
+        am5.color(0x020202),
+        am5.color(0xc26434),
+      ],
+      reuse: false,
+    });
 
-    series.labels.template.setAll({ textType: "circular" });
+    // Force use of your custom colorSet
+    series.slices.template.adapters.add("fill", (_fill, target) => {
+      return colorSet.getIndex(series.slices.indexOf(target));
+    });
+
+    // ✅ Add white stroke
+    series.slices.template.setAll({
+      cornerRadius: 10,
+      stroke: am5.color(0x020202),
+      strokeWidth: 1,
+      strokeOpacity: 1,
+    });
+
+    series.labels.template.setAll({
+      text: "{category}",
+      textType: "circular",
+      fill: am5.color(0x020202),
+    });
+
     series.states.create("hidden", { endAngle: -90 });
     series.data.setAll(data);
     series.appear(1000, 100);
-    series.labels.template.setAll({
-      text: "{category}", // Only category name
-      textType: "circular",
-      fill: am5.color(0xffffff),
-    });
-
-    series.slices.template.adapters.add("fill", (fill, target) => {
-      const index = (target.dataItem as any)?.index || 0;
-      const colors = [0xffffff, 0xffffff, 0xffffff, 0xffffff, 0xffffff];
-      return am5.color(colors[index % colors.length]);
-    });
 
     return () => {
       root.dispose();
@@ -60,9 +75,9 @@ export default function PieChart({ id, title, data }: PieChartProps) {
   }, [id, title, data]);
 
   return (
-    <div className="p-4 border border-white box-border w-[50%] max-w-[400px] rounded-[20px]">
+    <div className="p-4 bg-[#F9773B]  box-border  md:w-[500px] rounded-[20px]">
       <div className="text-center mb-2">
-        <span className="text-white font-['ClashDisplay-Bold'] text-[24px]">
+        <span className="text-[#020202] font-['ClashDisplay-Bold'] text-[24px]">
           Core Fundamentals
         </span>
       </div>

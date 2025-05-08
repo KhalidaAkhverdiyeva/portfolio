@@ -14,6 +14,15 @@ const RadarChart = () => {
     root._logo?.dispose();
 
     root.setThemes([am5themes_Animated.new(root)]);
+    const customColors = am5.ColorSet.new(root, {
+      colors: [
+        am5.color("#97B9FF"), // red-orange
+        am5.color("#97B9FF"), // sky blue
+        am5.color("#97B9FF"), // lime green
+        am5.color("#97B9FF"), // pink
+      ],
+      reuse: false,
+    });
 
     const chart = root.container.children.push(
       am5radar.RadarChart.new(root, {
@@ -32,25 +41,25 @@ const RadarChart = () => {
         category: "Nodemailer",
         value: 80,
         full: 100,
-        columnSettings: { fill: chart.get("colors")?.getIndex(0) },
+        columnSettings: { fill: customColors.getIndex(0) },
       },
       {
         category: "MangoDB",
         value: 85,
         full: 100,
-        columnSettings: { fill: chart.get("colors")?.getIndex(1) },
+        columnSettings: { fill: customColors.getIndex(1) },
       },
       {
         category: "Express.js",
         value: 92,
         full: 100,
-        columnSettings: { fill: chart.get("colors")?.getIndex(2) },
+        columnSettings: { fill: customColors.getIndex(2) },
       },
       {
         category: " Node.js",
         value: 98,
         full: 100,
-        columnSettings: { fill: chart.get("colors")?.getIndex(3) },
+        columnSettings: { fill: customColors.getIndex(3) },
       },
     ];
 
@@ -63,7 +72,7 @@ const RadarChart = () => {
     cursor.lineY.set("visible", false);
 
     const xRenderer = am5radar.AxisRendererCircular.new(root, {});
-    xRenderer.labels.template.setAll({ radius: 10 });
+    xRenderer.labels.template.setAll({ radius: 10, fill: am5.color(0x020202) });
     xRenderer.grid.template.setAll({ forceHidden: true });
 
     const xAxis = chart.xAxes.push(
@@ -147,13 +156,46 @@ const RadarChart = () => {
   }, []);
 
   return (
-    <div className="p-4 border border-white box-border w-[50%] max-w-[400px] rounded-[20px]">
+    <div className="p-4 bg-[#020202] border-solid border-[1px] border-[#ECE7E1] box-border md:w-[50%] rounded-[20px]">
       <div className="text-center mb-2">
-        <span className="text-white font-['ClashDisplay-Bold'] text-[24px]">
+        <span className="text-[#ECE7E1] font-['ClashDisplay-Bold'] text-[24px]">
           Backend
         </span>
       </div>
+
       <div id="chartdivRadar" className="w-[100%] h-[300px]" />
+
+      {/* Custom Legend */}
+      <div className="mt-4 flex flex-wrap gap-4 justify-center text-[#ECE7E1] text-[14px]">
+        <div className="flex items-center gap-2">
+          <span
+            className="w-3 h-3 rounded-sm"
+            style={{ backgroundColor: "#97B9FF" }}
+          ></span>
+          Nodemailer
+        </div>
+        <div className="flex items-center gap-2">
+          <span
+            className="w-3 h-3 rounded-sm"
+            style={{ backgroundColor: "#97B9FF" }}
+          ></span>
+          MangoDB
+        </div>
+        <div className="flex items-center gap-2">
+          <span
+            className="w-3 h-3 rounded-sm"
+            style={{ backgroundColor: "#97B9FF" }}
+          ></span>
+          Express.js
+        </div>
+        <div className="flex items-center gap-2">
+          <span
+            className="w-3 h-3 rounded-sm"
+            style={{ backgroundColor: "#97B9FF" }}
+          ></span>
+          Node.js
+        </div>
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 import React from "react";
 import PieChart from "@/components/piechart";
 import BarThree from "@/components/bar chart";
-import FrontendSkills from "@/components/half pie chart";
+import FrontendSkills from "@/components/skills";
 
 export default async function Skills() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -18,14 +18,22 @@ export default async function Skills() {
   return (
     <div>
       <Navbar />
-      <div className="w-[1100px] mx-auto flex flex-col gap-[20px] my-[50px]">
-        <div className="flex gap-[20px] ">
+      <div className="md:w-[1100px] mx-auto flex flex-col gap-[10px] md:gap-[20px] my-[20px] md:my-[50px] px-[10px]">
+        <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] ">
           <PieChart id="chartdiv1" title="First" data={data1} />
 
-          <FrontendSkills />
+          <div className="hidden md:block"></div>
+          <div className="md:hidden">
+            <BarThree />
+          </div>
         </div>
-        <div className="flex gap-[20px]">
-          <BarThree />
+        <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px]">
+          <div className="hidden md:block">
+            <BarThree />
+          </div>
+          <div className="md:hidden">
+            <FrontendSkills />
+          </div>
           <RadarChart />
         </div>
       </div>
