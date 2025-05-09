@@ -9,7 +9,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   IconButton,
 } from "@mui/material";
 
@@ -80,14 +79,13 @@ const Navbar = () => {
               </div>
             </div>
 
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <ListItem key={item.name} disablePadding>
                 <ListItemButton
                   component={Link}
                   href={item.path}
                   onClick={() => setOpen(false)}
                   selected={pathname === item.path}
-                  className="font-['ClashDisplay-Bold']"
                   sx={{
                     "&.Mui-selected": {
                       backgroundColor: "transparent",
@@ -96,19 +94,20 @@ const Navbar = () => {
                       backgroundColor: "transparent",
                     },
                     "&:hover": {
-                      backgroundColor: "#1a1a1a", // Optional: subtle hover
+                      backgroundColor: "#1a1a1a",
                     },
                   }}
                 >
-                  <ListItemText
-                    primary={item.name}
-                    primaryTypographyProps={{
-                      style: {
-                        textDecoration:
-                          pathname === item.path ? "line-through" : "none",
-                      },
-                    }}
-                  />
+                  <span className="font-['ClashDisplay-Bold'] text-[30px] flex items-end gap-[10px]">
+                    <span
+                      className={pathname === item.path ? "line-through" : ""}
+                    >
+                      {item.name}
+                    </span>
+                    <span className="font-['ClashDisplay-Light'] text-[12px] pb-[5px] text-[#4a4949]">
+                      ({`0${index + 1}`})
+                    </span>
+                  </span>
                 </ListItemButton>
               </ListItem>
             ))}
