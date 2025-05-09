@@ -17,12 +17,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { name: "HOME", path: "/" },
-    { name: "WORK", path: "/work" },
-    { name: "ABOUT", path: "/about" },
-    { name: "CONTACT", path: "/contact" },
-    { name: "CV", path: "/cvfinder" },
-    { name: "SKILLS", path: "/skills" },
+    { name: "work", path: "/work" },
+    { name: "about", path: "/about" },
+    { name: "contact", path: "/contact" },
+    { name: "cv", path: "/cvfinder" },
+    { name: "skills", path: "/skills" },
   ];
 
   const isHome = pathname === "/";
@@ -58,9 +57,15 @@ const Navbar = () => {
 
         {/* Hamburger for mobile */}
         <IconButton
-          className="text-[26px] md:hidden"
           onClick={() => setOpen(true)}
-          style={{ color: isHome ? "#020202" : "#ece7e1" }}
+          sx={{
+            display: {
+              xs: "inline-flex", // show on mobile
+              md: "none", // hide on md and larger
+            },
+            color: isHome ? "#020202" : "#ece7e1",
+            fontSize: "26px",
+          }}
         >
           <GiHamburgerMenu />
         </IconButton>
@@ -100,7 +105,7 @@ const Navbar = () => {
                 >
                   <span className="font-['ClashDisplay-Bold'] text-[30px] flex items-end gap-[10px]">
                     <span
-                      className={pathname === item.path ? "line-through" : ""}
+                      className={`uppercase pathname === item.path ? "line-through" : ""`}
                     >
                       {item.name}
                     </span>
