@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { IoCloseOutline } from "react-icons/io5";
+import { GoArrowUpRight } from "react-icons/go";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
   Drawer,
@@ -14,7 +15,7 @@ import {
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const navItems = [
     { name: "work", path: "/work" },
@@ -73,12 +74,14 @@ const Navbar = () => {
 
       {/* Sidebar Drawer for mobile */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <div className="w-screen  text-[20px] p-4 bg-[#020202] h-full text-[#ece7e1]">
+        <div className="w-screen flex flex-col justify-between text-[20px] p-4 bg-[#020202] h-full text-[#ece7e1]">
           <List>
-            <div className="flex justify-end border-b-solid border-b-[1px] border-[#444652] mb-[20px]">
-              <div className="flex gap-[5px]">
-                <button>Let&apos;s Talk</button>
-                <button onClick={() => setOpen(false)}>
+            <div className="flex justify-end border-b-solid border-b-[1px] border-[#444652] pb-5 mb-[20px]">
+              <div>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="border-solid border-[1px] border-[#444652] rounded-full px-4 py-[6px] text-[16px] cursor-pointer"
+                >
                   <IoCloseOutline />
                 </button>
               </div>
@@ -103,7 +106,7 @@ const Navbar = () => {
                     },
                   }}
                 >
-                  <span className="font-['ClashDisplay-Bold'] text-[30px] flex items-end gap-[10px]">
+                  <span className="font-['ClashDisplay-Bold'] text-[30px] flex items-end gap-[10px] cursor-pointer">
                     <span
                       className={`uppercase pathname === item.path ? "line-through" : ""`}
                     >
@@ -117,6 +120,29 @@ const Navbar = () => {
               </ListItem>
             ))}
           </List>
+          <div className="flex mb-[50px] gap-[10px] px-4 font-['ClashDisplay-Light']">
+            <Link
+              href="https://github.com/KhalidaAkhverdiyeva"
+              className="flex  items-center "
+            >
+              <GoArrowUpRight />
+              Github
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/khalida-akhverdiyeva/"
+              className="flex  items-center "
+            >
+              <GoArrowUpRight />
+              LinkedIn
+            </Link>
+            <Link
+              href="mailto:xalide.haqverdiyeva@gmail.com"
+              className="flex items-center"
+            >
+              <GoArrowUpRight />
+              Email
+            </Link>
+          </div>
         </div>
       </Drawer>
     </>
