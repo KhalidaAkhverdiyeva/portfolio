@@ -15,7 +15,7 @@ import {
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const navItems = [
     { name: "work", path: "/work" },
