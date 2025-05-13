@@ -6,12 +6,47 @@ import { Button, Typography } from "@mui/material";
 import { LuCircleArrowLeft, LuSquareArrowOutUpRight } from "react-icons/lu";
 import Project from "@/types";
 import { FaGithub, FaGlobeAmericas } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface DrawerProps {
   open: boolean;
   onClose: () => void;
   projectData: Project | null;
 }
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const tagVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export default function SwipeableTemporaryDrawer({
   open,
@@ -30,13 +65,13 @@ export default function SwipeableTemporaryDrawer({
           backgroundColor: "#020202",
           color: "#ECE7E1",
           display: "flex",
-          flexDirection: "column", // Ensure content is stacked vertically
+          flexDirection: "column",
         },
       }}
     >
       <Box
         sx={{
-          p: { xs: 2, md: 4 }, 
+          p: { xs: 2, md: 4 },
           overflowY: "auto",
           height: "calc(100vh - 80px)",
           pb: "80px",
@@ -62,178 +97,189 @@ export default function SwipeableTemporaryDrawer({
 
         {projectData && (
           <>
-            <Typography
-              variant="h4"
-              sx={{
-                color: "#ECE7E1",
-                fontSize: "24px",
-                fontFamily: "'ClashDisplay-Bold', sans-serif",
-                fontWeight: 700,
-              }}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              {projectData.title}
-            </Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: "#ECE7E1",
+                  fontSize: "24px",
+                  fontFamily: "'ClashDisplay-Bold', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                {projectData.title}
+              </Typography>
 
-            <Typography
-              sx={{
-                fontFamily: "'Satoshi-Regular', sans-serif",
-                fontSize: "14px",
-                my: "10px",
-                color: "#ECE7E1",
-              }}
-            >
-              {projectData.description}
-            </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "'Satoshi-Regular', sans-serif",
+                  fontSize: "14px",
+                  my: "10px",
+                  color: "#ECE7E1",
+                }}
+              >
+                {projectData.description}
+              </Typography>
+            </motion.div>
 
-            <video
-              className="w-[480px] h-[300px] object-cover rounded-[10px] my-4 bg-gray-300"
-              autoPlay
-              muted
-              loop
-              playsInline
-              src={projectData.videoUrl}
-            />
-            <Typography
-              sx={{
-                fontFamily: "'ClashDisplay-Bold', sans-serif",
-                fontSize: "20px",
-                fontWeight: 500,
-                color: "#ECE7E1",
-              }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              About
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "'Satoshi-Regular', sans-serif",
-                fontSize: "14px",
-                color: "#ECE7E1",
-              }}
-            >
-              {projectData.about}
-            </Typography>
+              <video
+                className="w-[480px] h-[300px] object-cover rounded-[10px] my-4 bg-gray-300"
+                autoPlay
+                muted
+                loop
+                playsInline
+                src={projectData.videoUrl}
+              />
+            </motion.div>
 
-            <Typography
-              sx={{
-                fontFamily: "'ClashDisplay-Bold', sans-serif",
-                fontSize: "20px",
-                fontWeight: 500,
-                my: "10px",
-                color: "#ECE7E1",
-              }}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
             >
-              Technologies
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "'Satoshi-Light', sans-serif",
-                fontSize: "14px",
-              }}
-            >
-              {projectData.technologies.map((tech, index) => (
-                <Button
-                  key={index}
+              <motion.div variants={textVariants}>
+                <Typography
                   sx={{
-                    padding: "4px", // Adjust button size
-                    fontSize: "12px", // Optional: Set font size for buttons
-                    color: "white", // Set text color to black
-                    backgroundColor: "rgba(255, 255, 255, 0.1)", // Set a semi-transparent white background
-                    backdropFilter: "blur(5px)", // Apply blur effect to the background
-                    borderRadius: "8px", // Optional: round corners for a smoother look
-                    "&:hover": {
-                      backgroundColor: "rgba(255, 255, 255, 0.2)", // Slightly increase transparency on hover
-                    },
-                    marginRight: "8px",
-                    marginBottom: "8px", // Add some space between buttons
-                    textTransform: "none", // Prevent uppercase transformation
-                    border: "1px solid rgba(255, 255, 255, 0.3)", // Optional: add border for more definition
+                    fontFamily: "'ClashDisplay-Bold', sans-serif",
+                    fontSize: "20px",
+                    fontWeight: 500,
+                    color: "#ECE7E1",
                   }}
                 >
-                  {tech}
-                </Button>
-              ))}
-            </Typography>
+                  About
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "'Satoshi-Regular', sans-serif",
+                    fontSize: "14px",
+                    color: "#ECE7E1",
+                  }}
+                >
+                  {projectData.about}
+                </Typography>
+              </motion.div>
 
-            <Typography
-              sx={{
-                fontFamily: "'ClashDisplay-Bold', sans-serif",
-                fontSize: "20px",
-                fontWeight: 500,
-                mt: "20px",
-                mb: "10px",
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                color: "#ECE7E1",
-              }}
-            >
-              <FaGlobeAmericas />
-              Website
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "'Satoshi-Regular', sans-serif",
-                fontSize: "14px",
-                "& a": {
-                  textDecoration: "underline", // Adds an underline to the links
-                  color: "white", // Link color (can be changed)
-                  transition: "color 0.3s ease", // Smooth transition for color change on hover
-                },
-                "& a:hover": {
-                  color: "grey", // Change color on hover
-                },
-              }}
-            >
-              <a
-                href={projectData.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {projectData.website}
-              </a>
-            </Typography>
+              <motion.div variants={textVariants}>
+                <Typography
+                  sx={{
+                    fontFamily: "'ClashDisplay-Bold', sans-serif",
+                    fontSize: "20px",
+                    fontWeight: 500,
+                    my: "10px",
+                    color: "#ECE7E1",
+                  }}
+                >
+                  Technologies
+                </Typography>
+                <motion.div
+                  variants={containerVariants}
+                  className="flex flex-wrap gap-2"
+                >
+                  {projectData.technologies.map((tech, index) => (
+                    <motion.span
+                      key={index}
+                      variants={tagVariants}
+                      className="px-2 py-1 text-xs bg-[#D1FD0A]/20 text-[#D1FD0A] rounded-full"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </motion.div>
 
-            <Typography
-              sx={{
-                fontFamily: "'ClashDisplay-Bold', sans-serif",
-                fontSize: "20px",
-                fontWeight: 500,
-                my: "10px",
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                color: "#ECE7E1",
-              }}
-            >
-              <FaGithub /> Github
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "'Satoshi-Regular', sans-serif",
-                fontSize: "14px",
-                "& a": {
-                  textDecoration: "underline",
-                  color: "#ECE7E1",
-                  transition: "color 0.3s ease",
-                },
-                "& a:hover": {
-                  color: "grey",
-                },
-              }}
-            >
-              <a
-                href={projectData.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {projectData.github}
-              </a>
-            </Typography>
+              <motion.div variants={textVariants}>
+                <Typography
+                  sx={{
+                    fontFamily: "'ClashDisplay-Bold', sans-serif",
+                    fontSize: "20px",
+                    fontWeight: 500,
+                    mt: "20px",
+                    mb: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    color: "#ECE7E1",
+                  }}
+                >
+                  <FaGlobeAmericas />
+                  Website
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "'Satoshi-Regular', sans-serif",
+                    fontSize: "14px",
+                    "& a": {
+                      textDecoration: "underline",
+                      color: "white",
+                      transition: "color 0.3s ease",
+                    },
+                    "& a:hover": {
+                      color: "grey",
+                    },
+                  }}
+                >
+                  <a
+                    href={projectData.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {projectData.website}
+                  </a>
+                </Typography>
+              </motion.div>
+
+              <motion.div variants={textVariants}>
+                <Typography
+                  sx={{
+                    fontFamily: "'ClashDisplay-Bold', sans-serif",
+                    fontSize: "20px",
+                    fontWeight: 500,
+                    my: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    color: "#ECE7E1",
+                  }}
+                >
+                  <FaGithub /> Github
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "'Satoshi-Regular', sans-serif",
+                    fontSize: "14px",
+                    "& a": {
+                      textDecoration: "underline",
+                      color: "#ECE7E1",
+                      transition: "color 0.3s ease",
+                    },
+                    "& a:hover": {
+                      color: "grey",
+                    },
+                  }}
+                >
+                  <a
+                    href={projectData.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {projectData.github}
+                  </a>
+                </Typography>
+              </motion.div>
+            </motion.div>
           </>
         )}
       </Box>
 
-      {/* Fixed Bottom Bar */}
       <Box
         sx={{
           position: "absolute",

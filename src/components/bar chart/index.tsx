@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import { motion } from "framer-motion";
 
 const BarThree = () => {
   useEffect(() => {
@@ -24,7 +25,6 @@ const BarThree = () => {
     chart.background.fill = am4core.color("#242424");
     chart.background.fillOpacity = 1;
 
-    // Always render vertical bars
     const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "year";
     categoryAxis.renderer.grid.template.stroke = am4core.color("#444");
@@ -52,12 +52,17 @@ const BarThree = () => {
   }, []);
 
   return (
-    <div className="w-full md:w-[50%] bg-[#242424] p-4 rounded-[20px]">
+    <motion.div
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut", delay: 1 }}
+      className="w-full md:w-[50%] bg-[#242424] p-4 rounded-[20px]"
+    >
       <div className="text-[#ECE7E1] text-center font-['ClashDisplay-Bold'] text-[24px] mb-4">
         Frameworks & Libraries
       </div>
       <div id="chartdiv3d" className="w-full h-[400px]" />
-    </div>
+    </motion.div>
   );
 };
 

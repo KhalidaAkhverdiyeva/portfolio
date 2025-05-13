@@ -2,6 +2,51 @@
 import React, { useState } from "react";
 import SwipeableTemporaryDrawer from "../sidebar";
 import Project from "@/types";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
+const ProjectCard = ({
+  project,
+  index,
+  onClick,
+}: {
+  project: Project;
+  index: number;
+  onClick: (project: Project) => void;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      className="relative md:w-[448px] h-[400px] text-[#020202] rounded-[20px] text-[20px] font-semibold cursor-pointer overflow-hidden"
+      onClick={() => onClick(project)}
+    >
+      <video
+        className="w-full h-full object-cover rounded-[20px] z-0 border"
+        autoPlay
+        muted
+        loop
+        playsInline
+        src={project.videoUrl}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/60 to-transparent rounded-[20px] opacity-100 transition-opacity duration-300 z-10" />
+      <div className="absolute inset-0 z-20 opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+        <h3 className="text-[34px] font-bold mb-2 text-[#D1FD0A] font-['ClashDisplay-Bold']">
+          {project.title}
+        </h3>
+        <p className="text-sm mb-4 font-['Satoshi-Regular']">
+          {project.description}
+        </p>
+      </div>
+    </motion.div>
+  );
+};
 
 const Projects = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -58,6 +103,25 @@ const Projects = () => {
       github: "https://github.com/KhalidaAkhverdiyeva/time-zone",
     },
     {
+      title: "Portfolio",
+      description:
+        "A responsive, modern portfolio website built to showcase my projects, skills and background.",
+      videoUrl:
+        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482670/timezone-demo_qetp4d.mp4",
+      about:
+        "This project reflects my design taste, attention to detail, and ability to build accessible, performant web interfaces.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Three.js",
+        "Tailwind",
+        "Framer Motion",
+      ],
+      website: "https://portfolio-two-sooty-14.vercel.app/",
+      github: "https://github.com/KhalidaAkhverdiyeva/portfolio",
+    },
+
+    {
       title: "Woodmart",
       description:
         "A vibrant plant shop website with multiple interactive slideshows and a fresh, nature-inspired design.",
@@ -69,7 +133,6 @@ const Projects = () => {
       website: "https://wooody.vercel.app/",
       github: "https://github.com/KhalidaAkhverdiyeva/wooody",
     },
-
     {
       title: "Techblog",
       description:
@@ -105,67 +168,38 @@ const Projects = () => {
     <div>
       <div className="max-w-[906px] mx-auto">
         {/* Title aligned with cards */}
-        <div className="text-[#ECE7E1] font-['ClashDisplay-Bold'] font-[700] text-[24px] mx-[25px] md:mx-0 md:text-[46px] md:mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-[#ECE7E1] font-['ClashDisplay-Bold'] font-[700] text-[24px] mx-[25px] md:mx-0 md:text-[46px] md:mb-10"
+        >
           Projects.
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div className="flex flex-col md:flex-row gap-[20px] justify-center pb-[50px]">
           {/* Column 1 */}
-          <div className="flex flex-col gap-[20px] m-[20px] md:m-0">
-            {projects.slice(0, 3).map((project, index) => (
-              <div
+          <div className="flex flex-col gap-[20px] m-[10px] md:m-0">
+            {projects.slice(0, 4).map((project, index) => (
+              <ProjectCard
                 key={index}
-                className="relative md:md:w-[448px] h-[400px] text-[#020202] rounded-[20px] text-[20px] font-semibold cursor-pointer overflow-hidden"
-                onClick={() => handleProjectClick(project)}
-              >
-                <video
-                  className="w-full h-full object-cover rounded-[20px] z-0 border"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  src={project.videoUrl}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/60 to-transparent rounded-[20px] opacity-100 transition-opacity duration-300 z-10" />
-                <div className="absolute inset-0 z-20 opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                  <h3 className="text-[34px] font-bold mb-2 text-[#D1FD0A] font-['ClashDisplay-Bold']">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm mb-4 font-['Satoshi-Regular']">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
+                project={project}
+                index={index}
+                onClick={handleProjectClick}
+              />
             ))}
           </div>
 
           {/* Column 2 */}
-          <div className="flex flex-col gap-[20px] m-[20px] md:m-0">
-            {projects.slice(3).map((project, index) => (
-              <div
+          <div className="flex flex-col gap-[20px] m-[10px] md:m-0">
+            {projects.slice(4).map((project, index) => (
+              <ProjectCard
                 key={index}
-                className="relative md:w-[448px]  h-[454px] text-[#020202] rounded-[20px] font-['ClashDisplay-Bold'] text-[20px] font-semibold cursor-pointer overflow-hidden"
-                onClick={() => handleProjectClick(project)}
-              >
-                <video
-                  className="w-full h-full object-cover rounded-[20px] z-0 border"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  src={project.videoUrl}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/60 to-transparent rounded-[20px] opacity-100 transition-opacity duration-300 z-10" />
-                <div className="absolute inset-0 z-20 opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                  <h3 className="text-[34px] font-bold mb-2 text-[#D1FD0A] font-['ClashDisplay-Bold']">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm mb-4 font-['Satoshi-Regular']">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
+                project={project}
+                index={index + 3}
+                onClick={handleProjectClick}
+              />
             ))}
           </div>
         </div>

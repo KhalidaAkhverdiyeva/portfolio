@@ -20,7 +20,7 @@ export default async function Skills() {
       <Navbar />
       <div className="md:w-[1100px] mx-auto flex flex-col gap-[10px] md:gap-[20px] my-[20px] md:my-[50px] px-[10px]">
         <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px] ">
-          <PieChart id="chartdiv1" title="First" data={data1} />
+          <PieChart id="chartdiv1" title="Core Fundamental" data={data1} />
           <FrontendSkills />
         </div>
         <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px]">

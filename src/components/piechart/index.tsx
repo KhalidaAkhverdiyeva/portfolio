@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
@@ -46,12 +46,10 @@ export default function PieChart({ id, title, data }: PieChartProps) {
       reuse: false,
     });
 
-    // Force use of your custom colorSet
     series.slices.template.adapters.add("fill", (_fill, target) => {
       return colorSet.getIndex(series.slices.indexOf(target));
     });
 
-    // ✅ Add white stroke
     series.slices.template.setAll({
       cornerRadius: 10,
       stroke: am5.color(0x020202),
@@ -75,13 +73,30 @@ export default function PieChart({ id, title, data }: PieChartProps) {
   }, [id, title, data]);
 
   return (
-    <div className="p-4 bg-[#F9773B]  box-border  md:w-[500px] rounded-[20px]">
-      <div className="text-center mb-2">
+    <motion.div
+      className="p-4 bg-[#F9773B] box-border md:w-[500px] rounded-[20px]"
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut",delay:0.5 }}
+    >
+      <motion.div
+        className="text-center mb-2"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
         <span className="text-[#020202] font-['ClashDisplay-Bold'] text-[24px]">
-          Core Fundamentals
+          {title}
         </span>
-      </div>
-      <div id={id} className="w-full h-[300px]" />
-    </div>
+      </motion.div>
+
+      <motion.div
+        id={id}
+        className="w-full h-[300px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      />
+    </motion.div>
   );
 }

@@ -6,6 +6,7 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { motion } from "framer-motion";
 
 // Type definition for a skill
 type Skill = {
@@ -52,7 +53,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ title, items, level }) => {
           </div>
         </CircularProgressbarWithChildren>
       </div>
-      <h3 className=" text-[12px] font-['ClashDisplay-SemiBold'] md:text-lg font-semibold text-[#ECE7E1] mb-2 md:font-['ClashDisplay-Bold']">
+      <h3 className="text-[12px] font-['ClashDisplay-SemiBold'] md:text-lg font-semibold text-[#ECE7E1] mb-2 md:font-['ClashDisplay-Bold']">
         {title}
       </h3>
       <ul
@@ -69,13 +70,18 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ title, items, level }) => {
 
 const FrontendSkills: React.FC = () => {
   return (
-    <section className="border-solid border-[2px] border-[#2E2E2E] text-[#ECE7E1] p-4 md:p-8 rounded-xl  w-full">
+    <motion.section
+      className="border-solid border-[2px] border-[#2E2E2E] text-[#ECE7E1] p-4 md:p-8 rounded-xl w-full"
+      initial={{ opacity: 0, x: 200 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+    >
       <div className="flex flex-wrap justify-start mt-[15px] md:mt-0">
         {skillsData.map((skill, index) => (
           <SkillCircle key={index} {...skill} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

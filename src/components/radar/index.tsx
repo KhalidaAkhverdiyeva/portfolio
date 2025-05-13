@@ -1,25 +1,25 @@
 // components/RadarChart.tsx
-"use client"; // if you're using app directory in Next.js 13+
+"use client";
 
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import * as am5radar from "@amcharts/amcharts5/radar";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import { useEffect } from "react";
+import { motion } from "framer-motion"; // <- import motion
 
 const RadarChart = () => {
   useEffect(() => {
-    // Create root
     const root = am5.Root.new("chartdivRadar");
     root._logo?.dispose();
 
     root.setThemes([am5themes_Animated.new(root)]);
     const customColors = am5.ColorSet.new(root, {
       colors: [
-        am5.color("#020202"), // red-orange
-        am5.color("#020202"), // sky blue
-        am5.color("#020202"), // lime green
-        am5.color("#020202"), // pink
+        am5.color("#020202"),
+        am5.color("#020202"),
+        am5.color("#020202"),
+        am5.color("#020202"),
       ],
       reuse: false,
     });
@@ -62,14 +62,6 @@ const RadarChart = () => {
         columnSettings: { fill: customColors.getIndex(3) },
       },
     ];
-
-    const cursor = chart.set(
-      "cursor",
-      am5radar.RadarCursor.new(root, {
-        behavior: "zoomX",
-      })
-    );
-    cursor.lineY.set("visible", false);
 
     const xRenderer = am5radar.AxisRendererCircular.new(root, {});
     xRenderer.labels.template.setAll({ radius: 10, fill: am5.color(0xffea81) });
@@ -151,12 +143,17 @@ const RadarChart = () => {
     chart.appear(1000, 100);
 
     return () => {
-      root.dispose(); // Clean up chart when component unmounts
+      root.dispose();
     };
   }, []);
 
   return (
-    <div className="p-4 bg-[#FFEA81] border-solid border-[2px] border-[#2E2E2E] box-border md:w-[50%] rounded-[20px]">
+    <motion.div
+      initial={{ x: 200, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+      className="p-4 bg-[#FFEA81] border-solid border-[2px] border-[#2E2E2E] box-border md:w-[50%] rounded-[20px]"
+    >
       <div className="text-center mb-2">
         <span className="text-[#020202] font-['ClashDisplay-Bold'] text-[24px]">
           Backend
@@ -165,7 +162,6 @@ const RadarChart = () => {
 
       <div id="chartdivRadar" className="w-[100%] h-[300px]" />
 
-      {/* Custom Legend */}
       <div className="mt-4 flex flex-wrap gap-4 justify-center text-[#020202] text-[14px] font-['Satoshi-Regular']">
         <div className="flex items-center gap-2">
           <span
@@ -196,7 +192,7 @@ const RadarChart = () => {
           Node.js
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

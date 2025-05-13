@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Projects from "@/components/projects";
 import React from "react";
@@ -9,6 +10,8 @@ export default async function Work() {
     <div>
       <Navbar />
       <Projects />
+      <Footer/>
+
     </div>
   );
 }
