@@ -12,7 +12,7 @@ const WelcomeSection = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
         className="text-[26px] md:text-[40px]"
       >
         Hey, I&apos;m Khalida <br />
@@ -24,7 +24,7 @@ const WelcomeSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
-              className="flip-wrap block animate-[mobileflip_15s_infinite] md:animate-[flip_10s_infinite]"
+              className="flip-wrap block animate-[mobileflip_15s_infinite] md:animate-[flip_16s_infinite]"
             >
               {[
                 "a tea lover.",

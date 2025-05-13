@@ -18,9 +18,9 @@ export default function HomeWrapper() {
 
   const isBlurred = (id: SectionId) => hovered !== null && hovered !== id;
 
-  const blurClass = (id: SectionId) =>
+  const blurClass = (id:SectionId) =>
     `${
-      isBlurred(id) ? "blur-[1px] opacity-70" : "blur-0 opacity-100"
+      isBlurred(id) ? "blur-[1px] opacity-90" : "blur-0 opacity-100"
     } transition-all duration-300  `;
 
   return (
