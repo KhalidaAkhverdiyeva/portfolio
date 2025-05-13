@@ -17,6 +17,7 @@
     "@mui/material": "^7.0.2",
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
+    "framer-motion": "^12.10.5",
     "next": "15.3.0",
     "react": "^19.1.0",
     "react-circular-progressbar": "^2.2.0",
