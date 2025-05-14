@@ -16,6 +16,10 @@ const MyForm = () => {
   });
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -36,10 +40,42 @@ const MyForm = () => {
     setIsSubmitDisabled(Object.values(newErrors).includes(true));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    alert("Form Submitted");
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/xalide.haqverdiyeva@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: "New Contact Form Submission",
+            _template: "table",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,7 +98,7 @@ const MyForm = () => {
           },
           "& .MuiInput-underline:after": { borderBottomColor: "#ECE7E1" },
         }}
-        onBlur={validateForm} // Validate on blur (when input loses focus)
+        onBlur={validateForm}
       />
 
       <TextField
@@ -84,7 +120,7 @@ const MyForm = () => {
           },
           "& .MuiInput-underline:after": { borderBottomColor: "#ECE7E1" },
         }}
-        onBlur={validateForm} // Validate on blur
+        onBlur={validateForm}
       />
 
       <TextField
@@ -107,17 +143,28 @@ const MyForm = () => {
           },
           "& .MuiInput-underline:after": { borderBottomColor: "#ECE7E1" },
         }}
-        onBlur={validateForm} // Validate on blur
+        onBlur={validateForm}
       />
+
+      {submitStatus === "success" && (
+        <p className="text-green-500">Message sent successfully!</p>
+      )}
+      {submitStatus === "error" && (
+        <p className="text-red-500">
+          Failed to send message. Please try again.
+        </p>
+      )}
 
       <button
         type="submit"
-        disabled={isSubmitDisabled}
-        className={`bg-[#D1FD0A] font-['ClashDisplay-Medium']  text-black py-3 px-6 rounded font-semibold hover:bg-black hover:text-white transition ${
-          isSubmitDisabled ? " cursor-not-allowed" : ""
+        disabled={isSubmitDisabled || isSubmitting}
+        className={`bg-[#D1FD0A] font-['ClashDisplay-Medium'] text-black py-3 px-6 rounded font-semibold hover:bg-black hover:text-white transition ${
+          isSubmitDisabled || isSubmitting
+            ? "opacity-50 cursor-not-allowed"
+            : ""
         }`}
       >
-        Send
+        {isSubmitting ? "Sending..." : "Send"}
       </button>
     </form>
   );
