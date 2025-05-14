@@ -74,12 +74,13 @@ export const FloatingTag: React.FC<FloatingTagProps> = ({
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            bgcolor: "#d4ff00",
-            border: "2px solid black",
+            bgcolor: "#020202",
+            border: "2px solid grey",
             boxShadow: 24,
             p: 4,
-            borderRadius: 2,
-            color: "#111",
+            borderRadius: 5,
+            color: "#ECE7E1",
+            fontFamily: "'Satoshi-Regular', sans-serif",
             width: 300,
           }}
         >
@@ -89,7 +90,7 @@ export const FloatingTag: React.FC<FloatingTagProps> = ({
           <p id="tag-modal-description">{info}</p>
           <button
             onClick={() => setShowModal(false)}
-            className="mt-4 text-sm underline"
+            className="mt-4 text-sm underline cursor-pointer"
           >
             Close
           </button>

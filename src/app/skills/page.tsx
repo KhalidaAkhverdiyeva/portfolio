@@ -4,6 +4,7 @@ import React from "react";
 import PieChart from "@/components/piechart";
 import BarThree from "@/components/bar chart";
 import FrontendSkills from "@/components/skills";
+import Footer from "@/components/footer";
 
 export default async function Skills() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -28,6 +29,7 @@ export default async function Skills() {
           <RadarChart />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -19,101 +19,101 @@ const About = () => {
   const tags = [
     {
       label: "BEU",
-      info: "Follow me",
+      info: "Beu was where I earned my degree and honed the skills that kickstarted my career. It’s where my professional journey truly began!",
       position: {
         bottom: 4,
         left: 355,
         rotate: 15,
-        mobileBottom: 136,
-        mobileLeft: 124,
+        mobileBottom: 134,
+        mobileLeft: -81,
       },
     },
     {
       label: "Career Switch",
-      info: "Who am I",
+      info: "Making the leap from chemistry to coding was a bold move, but it felt like the perfect blend of curiosity and logic. Now, I apply the same analytical thinking to solve problems, but with a few less test tubes!",
       position: {
         bottom: 27,
         left: 217,
         rotate: -15,
-        mobileBottom: 214,
-        mobileLeft: 105,
+        mobileBottom: 65,
+        mobileLeft: -78,
       },
     },
     {
       label: "Code Academy",
-      info: "Design thinker",
+      info: 'Where I First Typed "Hello, World!',
       position: {
         bottom: 48,
         left: 290,
         rotate: 25,
-        mobileBottom: 63,
-        mobileLeft: 156,
+        mobileBottom: 55,
+        mobileLeft: -306,
       },
     },
     {
       label: "Azerbaijan",
-      info: "Creative",
+      info: 'I come with a "made in Azerbaijan" tag. ',
       position: {
         bottom: 13,
         left: 44,
         rotate: -24,
-        mobileBottom: 98,
-        mobileLeft: 10,
+        mobileBottom: 6,
+        mobileLeft: -40,
       },
     },
     {
       label: "Khalida Akhverdiyeva",
-      info: "That's me!",
+      info: "Yep, that’s me! Every project reflects my commitment to excellence and a touch of my personality.",
       position: {
         bottom: 7,
         left: 396,
         rotate: -5,
-        mobileBottom: 20,
-        mobileLeft: 14,
+        mobileBottom: 170,
+        mobileLeft: -390,
       },
     },
     {
       label: "Daily Routine",
-      info: "Just a fun tag",
+      info: "I kickstart my day with a good breakfast and a workout to get the energy flowing. Then, it's time for some LeetCode challenges and coding with music in the background. I wrap up my day with a relaxing walk outside to clear my head and recharge.",
       position: {
         bottom: 3,
         left: 265,
         rotate: -2,
-        mobileBottom: 173,
-        mobileLeft: 174,
+        mobileBottom: 130,
+        mobileLeft: -179,
       },
     },
     {
       label: "Hobbies",
-      info: "This year!",
+      info: "Outside of coding, I’m all about books, movies, and good conversations. I love a good walk with friends—sometimes, the best ideas come when you're on the move!",
       position: {
         bottom: 38,
         left: 385,
         rotate: 22,
-        mobileBottom: 107,
-        mobileLeft: 198,
+        mobileBottom: 10,
+        mobileLeft: -141,
       },
     },
     {
       label: "Challenges",
-      info: "This year!",
+      info: "Some nights, I’m on the edge of throwing my laptop out the window—just me, a bug in the code, and too much tea. But somehow, I always make it through, and the satisfaction of solving a problem is worth the drama!",
       position: {
         bottom: 14,
         left: 148,
         rotate: 28,
-        mobileBottom: 178,
-        mobileLeft: 8,
+        mobileBottom: 9,
+        mobileLeft: 28,
       },
     },
     {
       label: "Goals",
-      info: "This year!",
+      info: "My goal is to live life on my terms—freelancing while sipping coffee by the beach and exploring the world. I dream of creating from anywhere, whether it’s under the sun or on a plane, bringing my passion for coding and adventure together.",
       position: {
         bottom: 5,
         left: 111,
         rotate: -8,
-        mobileBottom: 67,
-        mobileLeft: 83,
+        mobileBottom: 2,
+        mobileLeft: 1,
       },
     },
   ];
@@ -166,7 +166,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Text Section with Frosted Glass Effect */}
+        {/* Text Section  */}
         <motion.div
           className="w-full md:w-4/5"
           variants={containerVariants}
