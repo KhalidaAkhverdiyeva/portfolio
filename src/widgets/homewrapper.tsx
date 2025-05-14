@@ -7,6 +7,7 @@ import CvSection from "@/widgets/cv";
 import ContactSection from "@/widgets/contact";
 import WorkSection from "@/widgets/work";
 import SkillsSection from "@/widgets/skills";
+import Footer from "@/components/footer";
 
 type SectionId = "welcome" | "about" | "cv" | "contact" | "work" | "skills";
 
@@ -18,7 +19,7 @@ export default function HomeWrapper() {
 
   const isBlurred = (id: SectionId) => hovered !== null && hovered !== id;
 
-  const blurClass = (id:SectionId) =>
+  const blurClass = (id: SectionId) =>
     `${
       isBlurred(id) ? "blur-[1px] opacity-90" : "blur-0 opacity-100"
     } transition-all duration-300  `;
@@ -79,6 +80,10 @@ export default function HomeWrapper() {
             <SkillsSection />
           </div>
         </div>
+      </div>
+
+      <div className="md:hidden">
+        <Footer />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const WorkSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
-            className=" absolute top-[37px] left-[122px] w-[137px] h-[90px] md:top-[36px] md:left-[63px] md:w-[275px] md:h-[180px] md:rounded-[5px] object-cover z-0"
+            className=" absolute top-[42px] left-[129px] w-[172px] h-[115px] md:top-[36px] md:left-[63px] md:w-[275px] md:h-[180px] md:rounded-[5px] object-cover z-0"
             autoPlay
             muted
             loop
@@ -32,7 +32,7 @@ const WorkSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
-            className="z-30 w-[200px] md:w-[400px] h-auto"
+            className="z-30 w-[250px] md:w-[400px] h-auto"
           >
             <Image
               src="/image/macbook.png"
@@ -40,7 +40,7 @@ const WorkSection = () => {
               width={400}
               height={100}
               sizes="(max-width: 768px) 200px, 400px"
-              className="w-[200px] md:w-[400px] h-auto absolute top-[20px] left-[90px] md:static"
+              className="w-[250px] md:w-[400px] h-auto absolute top-[20px] left-[90px] md:static"
             />
           </motion.div>
 
@@ -48,7 +48,7 @@ const WorkSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.8, ease: "easeOut" }}
-            className="absolute  w-[45px] h-[90px] md:w-[60px] md:h-[120px] left-[240px] md:left-[310px] top-[80px] md:top-[140px] z-[50]"
+            className="absolute  w-[45px] h-[90px] md:w-[60px] md:h-[120px] left-[275px] md:left-[310px] top-[94px] md:top-[140px] z-[50]"
           >
             <Image
               src="/image/iphone-demo-portrait.png"
