@@ -20,7 +20,7 @@ const CvSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.8, ease: "easeOut" }}
         >
-          cv.
+          4fun.
         </motion.span>
 
         <motion.div

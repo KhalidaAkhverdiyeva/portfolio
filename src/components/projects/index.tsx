@@ -107,7 +107,7 @@ const Projects = () => {
       description:
         "A responsive, modern portfolio website built to showcase my projects, skills and background.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482670/timezone-demo_qetp4d.mp4",
+        "https://res.cloudinary.com/dxtasssta/video/upload/v1747243704/porti_a7qip1.mp4",
       about:
         "This project reflects my design taste, attention to detail, and ability to build accessible, performant web interfaces.",
       technologies: [

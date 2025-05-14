@@ -16,10 +16,25 @@ const About = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleCVDownload = () => {
+    // Create a link element
+    const link = document.createElement("a");
+    // Set the path to your CV file in the public folder
+    link.href = "/files/CV.pdf"; // Make sure to put your CV file in the public/files folder
+    // Set the download attribute to force download
+    link.download = "Khalida_Akhverdiyeva_CV.pdf";
+    // Append to body
+    document.body.appendChild(link);
+    // Trigger click
+    link.click();
+    // Clean up
+    document.body.removeChild(link);
+  };
+
   const tags = [
     {
       label: "BEU",
-      info: "Beu was where I earned my degree and honed the skills that kickstarted my career. It’s where my professional journey truly began!",
+      info: "Beu was where I earned my degree and honed the skills that kickstarted my career. It's where my professional journey truly began!",
       position: {
         bottom: 4,
         left: 355,
@@ -63,7 +78,7 @@ const About = () => {
     },
     {
       label: "Khalida Akhverdiyeva",
-      info: "Yep, that’s me! Every project reflects my commitment to excellence and a touch of my personality.",
+      info: "Yep, that's me! Every project reflects my commitment to excellence and a touch of my personality.",
       position: {
         bottom: 7,
         left: 396,
@@ -85,7 +100,7 @@ const About = () => {
     },
     {
       label: "Hobbies",
-      info: "Outside of coding, I’m all about books, movies, and good conversations. I love a good walk with friends—sometimes, the best ideas come when you're on the move!",
+      info: "Outside of coding, I'm all about books, movies, and good conversations. I love a good walk with friends—sometimes, the best ideas come when you're on the move!",
       position: {
         bottom: 38,
         left: 385,
@@ -96,7 +111,7 @@ const About = () => {
     },
     {
       label: "Challenges",
-      info: "Some nights, I’m on the edge of throwing my laptop out the window—just me, a bug in the code, and too much tea. But somehow, I always make it through, and the satisfaction of solving a problem is worth the drama!",
+      info: "Some nights, I'm on the edge of throwing my laptop out the window—just me, a bug in the code, and too much tea. But somehow, I always make it through, and the satisfaction of solving a problem is worth the drama!",
       position: {
         bottom: 14,
         left: 148,
@@ -107,7 +122,7 @@ const About = () => {
     },
     {
       label: "Goals",
-      info: "My goal is to live life on my terms—freelancing while sipping coffee by the beach and exploring the world. I dream of creating from anywhere, whether it’s under the sun or on a plane, bringing my passion for coding and adventure together.",
+      info: "My goal is to live life on my terms—freelancing while sipping coffee by the beach and exploring the world. I dream of creating from anywhere, whether it's under the sun or on a plane, bringing my passion for coding and adventure together.",
       position: {
         bottom: 5,
         left: 111,
@@ -147,7 +162,7 @@ const About = () => {
   return (
     <div className="relative w-scren md:h-screen overflow-hidden">
       <Navbar />
-      <div className="flex flex-col md:flex-row items-center p-[15px] md:w-[1200px] md:mx-auto gap-4 md:gap-8">
+      <div className="flex flex-col md:flex-row items-start p-[15px] md:w-[1200px] md:mx-auto gap-4 md:gap-8">
         {/* Image Section */}
         <motion.div
           className="w-full md:w-2/5"
@@ -196,14 +211,25 @@ const About = () => {
             </motion.p>
             <motion.p
               variants={textVariants}
-              className="font-['Satoshi-Regular'] text-center text-[16px] text-[#ECE7E1] leading-relaxed"
+              className="font-['Satoshi-Regular'] text-center text-[16px] text-[#ECE7E1] leading-relaxed mb-8"
             >
-              From that moment on, she found herself diving deeper into the
-              world of code every evening after work. What started as curiosity
+              What started as curiosity
               turned into passion. Now, here she is—writing the About section of
               her frontend development portfolio. She knows there&apos;s still a
               long road ahead, but that&apos;s the exciting part.
             </motion.p>
+
+            {/* CV Download Button */}
+            <motion.div variants={textVariants} className="flex justify-center">
+              <motion.button
+                onClick={handleCVDownload}
+                className="bg-[#020202] hover:bg-[#2a2a2a] border text-[#ECE7E1] px-8 py-3 rounded-[10px] font-['ClashDisplay-Medium'] text-[16px] transition-all z-30 duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Download CV
+              </motion.button>
+            </motion.div>
           </div>
         </motion.div>
       </div>
