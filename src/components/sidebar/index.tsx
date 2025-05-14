@@ -188,7 +188,7 @@ export default function SwipeableTemporaryDrawer({
                     <motion.span
                       key={index}
                       variants={tagVariants}
-                      className="px-2 py-1 text-xs bg-[#D1FD0A]/20 text-[#D1FD0A] rounded-full"
+                      className="px-3 py-2 text-xs bg-[#1a1b15] text-white rounded-[10px]"
                     >
                       {tech}
                     </motion.span>
