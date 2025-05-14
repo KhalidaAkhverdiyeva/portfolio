@@ -2,7 +2,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { LuCircleArrowLeft, LuSquareArrowOutUpRight } from "react-icons/lu";
 import Project from "@/types";
 import { FaGithub, FaGlobeAmericas } from "react-icons/fa";
