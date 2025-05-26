@@ -58,7 +58,7 @@ const Projects = () => {
       description:
         "Impact is a fully responsive e-commerce platform designed for showcasing and selling high-end decorative products.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482296/impact-demo_lpcinx.mp4",
+        "https://www.dropbox.com/scl/fi/h8l4otlbb28lpupqig2bq/2025-04-22-17-02-27.mkv?rlkey=qw6wgkqfv8v1zezt975h0lsum&st=nc8yh3pn&raw=1",
       about:
         "The site is fully built from scratch — with a Next.js + TypeScript frontend and a Node.js + MongoDB backend. Fast, functional, and visually driven, Impact blends design with technology to deliver a smooth and inspiring shopping experience.",
       technologies: [
@@ -76,7 +76,7 @@ const Projects = () => {
       description:
         "Jewelry brand website with login/register. Crafted with a custom UI and full authentication flow.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482523/alukas-demo_q4vnys.mp4",
+        "https://www.dropbox.com/scl/fi/r1e9fpeoghxno84qzu3o3/2025-04-22-15-41-45.mkv?rlkey=ju7rx1ek71dlgcwpsdb5qqlyh&st=709x0hom&raw=1",
       about:
         "Alukas & Co. is a modern jewelry brand store crafted to reflect elegance and sophistication. Built with Next.js and TypeScript, the site features smooth animations and essential pages like login, registration, and product views.",
       technologies: ["Next.js", "Typescript", "Swiper", "Tailwind"],
@@ -88,7 +88,7 @@ const Projects = () => {
       description:
         "An elegant watch brand site focused on storytelling and product showcase, built for a sleek user experience.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482670/timezone-demo_qetp4d.mp4",
+        "https://www.dropbox.com/scl/fi/n0r39vqjcmb4wv7mc5co6/2025-04-22-15-31-56.mkv?rlkey=qid2byhr62rvebkspz75oyhm2&st=zbypkfk1&raw=1",
       about:
         "Built entirely with Next.js and TypeScript, it offers a fast, responsive, and informative experience. Timezone bridges functionality and elegance — just like a great watch should.",
       technologies: [
@@ -107,7 +107,7 @@ const Projects = () => {
       description:
         "A responsive, modern portfolio website built to showcase my projects, skills and background.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1747243704/porti_a7qip1.mp4",
+        "https://www.dropbox.com/scl/fi/brfvpjrw1lvu4rah2clgp/2025-05-14-21-16-02.mkv?rlkey=m2mjt14qyr9hwaebs8ggxqxyv&st=9qvgjt2v&raw=1",
       about:
         "This project reflects my design taste, attention to detail, and ability to build accessible, performant web interfaces.",
       technologies: [
@@ -126,7 +126,7 @@ const Projects = () => {
       description:
         "A vibrant plant shop website with multiple interactive slideshows and a fresh, nature-inspired design.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482612/woody-demo_vi13io.mp4",
+        "https://www.dropbox.com/scl/fi/g13verxpcyo0gww97o8uh/2025-04-22-15-50-18.mkv?rlkey=80winw2sh2hpznr67utcq280m&st=1uhrab8m&raw=1",
       about:
         " As one of my earliest projects, it was built using HTML, SCSS, and JavaScript, focusing on clean design and a natural aesthetic. The site showcases a variety of indoor plants with a user-friendly layout and subtle animations.",
       technologies: ["HTML", "SCSS", "Javascipt"],
@@ -138,7 +138,7 @@ const Projects = () => {
       description:
         "A React-powered blog site with a clean landing page and dynamic blog rendering.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482603/techbloog-demo_pl0t6a.mp4",
+        "https://www.dropbox.com/scl/fi/xypb5bzf1c9tnq46bwxsq/2025-04-22-15-19-48.mkv?rlkey=4a12mqmn6g8m0n7druwql1wcz&st=xt5oyund&raw=1",
       about:
         "TechBlog is a minimal and modern blog site built with React and powered by Sanity CMS. It features a clean landing page and a dynamic card layout that pulls content directly from Sanity. TechBlog is a lightweight showcase of content-driven design and headless CMS integration.",
       technologies: ["React", "Tailwind", "Sanity"],
@@ -150,7 +150,7 @@ const Projects = () => {
       description:
         "A modern landing page for a rental service concept — clean, bold, and conversion-focused.",
       videoUrl:
-        "https://res.cloudinary.com/dxtasssta/video/upload/v1745482690/Homezen-demo_-_Made_with_Clipchamp_qlgsb1.mp4",
+        "https://www.dropbox.com/scl/fi/siklwrrkh10pb4nm0x1ku/2025-04-22-14-14-52.mkv?rlkey=c96kgpoafapb2yt74s6m0482d&st=38l5ltqq&raw=1",
       about:
         "HomeZen is a home rental platform built with HTML, CSS, SCSS, and custom JavaScript. It features fully functional CRUD cards and uses custom APIs to manage property listings. The site focuses on simplicity and usability, allowing users to browse, add, edit, or remove listings with ease. HomeZen is a clean, practical project that highlights hands-on experience with frontend logic and API integration.",
       technologies: ["HTML", "CSS", "SCSS", "Javascript"],
