@@ -145,18 +145,18 @@ const Projects = () => {
       website: "https://techblooog.vercel.app",
       github: "https://github.com/KhalidaAkhverdiyeva/techblooog-react",
     },
-    {
-      title: "Homezen",
-      description:
-        "A modern landing page for a rental service concept — clean, bold, and conversion-focused.",
-      videoUrl:
-        "https://www.dropbox.com/scl/fi/da3rwf7l1dufi3y5pdmfj/2025-04-22-14-14-52.mp4?rlkey=pummhpgmms66vf31y2x2jg2y2&st=jqzjaf9b&raw=1",
-      about:
-        "HomeZen is a home rental platform built with HTML, CSS, SCSS, and custom JavaScript. It features fully functional CRUD cards and uses custom APIs to manage property listings. The site focuses on simplicity and usability, allowing users to browse, add, edit, or remove listings with ease. HomeZen is a clean, practical project that highlights hands-on experience with frontend logic and API integration.",
-      technologies: ["HTML", "CSS", "SCSS", "Javascript"],
-      website: "https://homezen-gold.vercel.app",
-      github: "https://github.com/KhalidaAkhverdiyeva/homezen",
-    },
+    // {
+    //   title: "Homezen",
+    //   description:
+    //     "A modern landing page for a rental service concept — clean, bold, and conversion-focused.",
+    //   videoUrl:
+    //     "https://www.dropbox.com/scl/fi/da3rwf7l1dufi3y5pdmfj/2025-04-22-14-14-52.mp4?rlkey=pummhpgmms66vf31y2x2jg2y2&st=jqzjaf9b&raw=1",
+    //   about:
+    //     "HomeZen is a home rental platform built with HTML, CSS, SCSS, and custom JavaScript. It features fully functional CRUD cards and uses custom APIs to manage property listings. The site focuses on simplicity and usability, allowing users to browse, add, edit, or remove listings with ease. HomeZen is a clean, practical project that highlights hands-on experience with frontend logic and API integration.",
+    //   technologies: ["HTML", "CSS", "SCSS", "Javascript"],
+    //   website: "https://homezen-gold.vercel.app",
+    //   github: "https://github.com/KhalidaAkhverdiyeva/homezen",
+    // },
   ];
 
   const handleProjectClick = (project: Project) => {
@@ -181,7 +181,7 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row gap-[20px] justify-center pb-[50px]">
           {/* Column 1 */}
           <div className="flex flex-col gap-[20px] m-[10px] md:m-0">
-            {projects.slice(0, 4).map((project, index) => (
+            {projects.slice(0, 3).map((project, index) => (
               <ProjectCard
                 key={index}
                 project={project}
@@ -193,7 +193,7 @@ const Projects = () => {
 
           {/* Column 2 */}
           <div className="flex flex-col gap-[20px] m-[10px] md:m-0">
-            {projects.slice(4).map((project, index) => (
+            {projects.slice(3).map((project, index) => (
               <ProjectCard
                 key={index}
                 project={project}
