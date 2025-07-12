@@ -25,7 +25,7 @@ const WorkSection = () => {
             muted
             loop
             playsInline
-            src="https://www.dropbox.com/scl/fi/h8l4otlbb28lpupqig2bq/2025-04-22-17-02-27.mp4?rlkey=qw6wgkqfv8v1zezt975h0lsum&st=nc8yh3pn&raw=1"
+            src="https://www.dropbox.com/scl/fi/kswdx26hxe9uke77gad4g/2025-04-22-17-02-27.mp4?rlkey=m7lo03itd9agk5zuz9e51an4u&st=12b3qm61&raw=1"
           />
 
           <motion.div
