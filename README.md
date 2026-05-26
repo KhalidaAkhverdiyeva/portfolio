@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with Next.js, React, and Three.js. This project showcases a professional portfolio with 3D elements and smooth animations.
 
-## 🚀 Features
+## Features
 
 - Modern and responsive design
 - 3D interactive elements using Three.js
@@ -12,7 +12,7 @@ A modern, interactive portfolio website built with Next.js, React, and Three.js.
 - TypeScript for type safety
 - Tailwind CSS for styling
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** Next.js 15.3.0
 - **Language:** TypeScript
@@ -23,7 +23,7 @@ A modern, interactive portfolio website built with Next.js, React, and Three.js.
 - **Charts:** AmCharts
 - **Icons:** React Icons
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -34,7 +34,7 @@ src/
 └── widgets/      # Complex UI components
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository:
 
@@ -45,41 +45,8 @@ cd portfolio
 
 2. Install dependencies:
 
-```bash
 npm install
-# or
-yarn install
-# or
-bun install
-```
 
 3. Run the development server:
 
-```bash
 npm run dev
-# or
-yarn dev
-# or
-bun dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-## 📝 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## 🚀 Deployment
-
-This project is configured for deployment on Vercel. The deployment process is automatic when pushing to the main branch.
-
-## 📄 License
-
-This project is private and proprietary.
-
----
-
-Built with ❤️ using Next.js
